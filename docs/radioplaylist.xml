@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tv SYSTEM "xmltv.dtd">
+<playlist>
+<!--
+	
+-->
+
+	<channel id="devin.rtvs.org"><display-name>Devín</display-name></channel>
+	<channel id="fm.rtvs.org"><display-name>FM</display-name></channel>
+	<channel id="junior.rtvs.org"><display-name>Junior</display-name></channel>
+	<channel id="klasika.rtvs.org"><display-name>Klasika</display-name></channel>
+	<channel id="litera.rtvs.org"><display-name>Litera</display-name></channel>
+	<channel id="nev.rtvs.org"><display-name>NEV</display-name></channel>
+	<channel id="patria.rtvs.org"><display-name>Patria</display-name></channel>
+	<channel id="rsi.rtvs.org"><display-name>RSI</display-name></channel>
+	<channel id="reginaba.rtvs.org"><display-name>ReginaBA</display-name></channel>
+	<channel id="reginabb.rtvs.org"><display-name>ReginaBB</display-name></channel>
+	<channel id="reginake.rtvs.org"><display-name>ReginaKE</display-name></channel>
+	<channel id="slovensko.rtvs.org"><display-name>Slovensko</display-name></channel>
+	<!--  id:479442 -->
+	<programme start="20151231073307 +0200" channel="slovensko.rtvs.org">
+		<artist>King Elle</artist>
+		<album></album>
+		<track>Exs And Ohs</track>
+	</programme>
+	<!--  id:479441 -->
+	<programme start="20151231073244 +0200" channel="fm.rtvs.org">
+		<artist>Oy</artist>
+		<album></album>
+		<track>Bienvenue Chez Toi</track>
+	</programme>
+	<!--  id:479440 -->
+	<programme start="20151231073128 +0200" channel="reginabb.rtvs.org">
+		<artist>Habera Pavol Maiga Ibrahim</artist>
+		<album></album>
+		<track>Mama Kami</track>
+	</programme>
+	<!--  id:479439 -->
+	<programme start="20151231073114 +0200" channel="reginake.rtvs.org">
+		<artist>Ricchi e Poveri</artist>
+		<album>I Piu Grandi Successi [1994]</album>
+		<track>Mamma Maria</track>
+	</programme>
+	<!--  id:479438 -->
+	<programme start="20151231072816 +0200" channel="fm.rtvs.org">
+		<artist>Diego</artist>
+		<album></album>
+		<track>Pouring Out Live</track>
+	</programme>
+	<!--  id:479437 -->
+	<programme start="20151231072748 +0200" channel="reginabb.rtvs.org">
+		<artist>Ilona Csáková</artist>
+		<album></album>
+		<track>Jedno Tajemství</track>
+	</programme>
+	<!--  id:479436 -->
+	<programme start="20151231072721 +0200" channel="reginake.rtvs.org">
+		<artist>Ivan MlÁdek Banjo Band</artist>
+		<album></album>
+		<track>Jez</track>
+	</programme>
+	<!--  id:479435 -->
+	<programme start="20151231072651 +0200" channel="reginaba.rtvs.org">
+		<artist>Shakin Stevens</artist>
+		<album>The Hits of Shakin&apos; Stevens, Vol. 2 [1998]</album>
+		<track>Merry Christmas Everyone</track>
+	</programme>
+	<!--  id:479434 -->
+	<programme start="20151231072626 +0200" channel="patria.rtvs.org">
+		<artist>Edith Piaf</artist>
+		<album></album>
+		<track>Sous Le Ciel De Paris</track>
+	</programme>
+	<!--  id:479433 -->
+	<programme start="20151231072441 +0200" channel="slovensko.rtvs.org">
+		<artist>k-maro</artist>
+		<album>La Good Life [2004]</album>
+		<track>Femme Like U</track>
+	</programme>
+
+</playlist>

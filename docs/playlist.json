@@ -1,0 +1,51 @@
+{
+    "state": {
+        "menuPreview": null
+    },
+    "snippets": {
+        "snippet-playlist": "
+        <ul class=\"stations nav\">
+        <li class=\"list\">
+        <div class=\"inset\">
+        <span class=\"programmeTime\">08:09</span>
+        <span class=\"title\">Peter Nagy</span>
+        <span class=\"song\">S Nohami Na Stole</span>
+        </div>
+        </li>
+
+        <li class=\"list\">
+        <div class=\"inset\">
+        <span class=\"programmeTime\">08:06</span>
+        <span class=\"title\">Pink</span>
+        <span class=\"song\">Get the Party Started</span>
+        </div>
+        </li>
+
+        <li class=\"list\">
+        <div class=\"inset\">
+        <span class=\"programmeTime\">07:55</span>
+        <span class=\"title\">Michael Bublé</span>
+        <span class=\"song\">Winter Wonderland</span>
+        </div>
+        </li>
+
+        <li class=\"list\">
+        <div class=\"inset\">
+        <span class=\"programmeTime\">07:52</span>
+        <span class=\"title\">Peha</span>
+        <span class=\"song\">Diabol - Anjel</span>
+        </div>
+        </li>
+
+        <li class=\"list\">
+        <div class=\"inset\">
+        <span class=\"programmeTime\">07:43</span>
+        <span class=\"title\">Bobby McFerrin</span>
+        <span class=\"song\">Don't Worry, Be Happy</span>
+        </div>
+        </li>
+        
+        </ul>
+        "
+    }
+}
