@@ -15,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TVApplicationControllerDe
     var window: UIWindow?
     var appController: TVApplicationController?
 
-    static let BaseUrl = "http://localhost:9001/"
+    // static let BaseUrl = "http://localhost:9001/" // DEV setting. In the ${project}/client folder, run python -m SimpleHTTPServer 9001
+    static let BaseUrl =  "http://zemiak.github.io/slovakradio/server/v1/" // PROD setting
+
     static let BootUrl = "\(AppDelegate.BaseUrl)js/application.js"
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
