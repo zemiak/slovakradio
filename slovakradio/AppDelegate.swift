@@ -35,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TVApplicationControllerDe
         }
 
         appControllerContext.launchOptions["BaseUrl"] = BaseUrl
+        appControllerContext.launchOptions["Version"] = config.getVersion() + (config.isDevelopment() ? " DEV" : "");
         self.appController = TVApplicationController(context: appControllerContext, window: self.window, delegate: self)
 
         return true

@@ -1,8 +1,9 @@
 var RadioData = {
-    "streamUrl": "http://icecast.stv.livebox.sk/XXX_128.mp3",
+    "streamUrl": "http://live.slovakradio.sk:8000/XXX_QQQ.mp3",
     "playlistUrl": "http://slovensko.rtvs.sk/json/radio_playlist.json?channel=XXX",
 
-    "slovakia": {
+    "slovensko": {
+        "stream": "Slovensko",
         "id": 12,
         "title": "Rádio Slovensko",
         "description": "Rádio Slovensko je prvá programová služba Slovenského rozhlasu. Dvadsaťštyri hodín denne prináša aktuálne spravodajstvo, nepretržité informácie o"
@@ -13,6 +14,7 @@ var RadioData = {
     },
 
     "regina-ba": {
+        "stream": "Regina_BA",
         "id": 9,
         "title": "Rádio Regina Bratislava",
         "description": "V autonómnom vysielaní bratislavského štúdia Rádia Regina dominujú v pracovných dňoch relácie kontaktného charakteru s poslucháčmi."
@@ -22,6 +24,7 @@ var RadioData = {
     },
 
     "devin": {
+        "stream": "Devin",
         "id": 1,
         "title": "Rádio Devín",
         "description": "Rádio Devín, programová služba dávajúca priestor umeleckým, literárno-dramatickým, umeno-vedným rozhlasovým útvarom,"
@@ -29,6 +32,7 @@ var RadioData = {
     },
 
     "fm": {
+        "stream": "FM",
         "id": 2,
         "title": "Rádio_FM",
         "description": "Rádio_FM je hudobné rádio s presahom do kultúrneho priestoru orientovaného na náročnejšieho, mlado zmýšľajúceho poslucháča."
@@ -41,6 +45,7 @@ var RadioData = {
     },
 
     "patria": {
+        "stream": "Patria",
         "id": 7,
         "title": "Rádio Patria",
         "description": "Közép-Európában a húszas évek derekán kezdődött a rendszeres rádiózás. Szlovákia esetében a gyökerek egészen 1926-ig nyúlnak vissza."
@@ -49,6 +54,7 @@ var RadioData = {
     },
 
     "klasika": {
+        "stream": "Klasika",
         "id": 4,
         "title": "Rádio Klasika",
         "description": "Rádio Klasika, siedmy okruh Slovenského rozhlasu, je digitálna programová služba, venovaná klasickej hudbe všetkých období a foriem,"
@@ -56,6 +62,7 @@ var RadioData = {
     },
 
     "litera": {
+        "stream": "Litera",
         "id": 5,
         "title": "Rádio Litera",
         "description": "Rádio Litera je ôsmy okruh Slovenského rozhlasu a spolu s Rádiom Klasika a Rádiom Junior patrí k novým digitálnym programovým službám."
@@ -65,12 +72,14 @@ var RadioData = {
     },
 
     "junior": {
+        "stream": "Junior",
         "id": 3,
         "title": "Rádio Junior",
         "description": "Rádio Junior - Slovenský rozhlas 9 je digitálna programová služba Slovenského rozhlasu adresovaná najmladším poslucháčom."
     },
 
     "regina-bb": {
+        "stream": "Regina_BB",
         "id": 10,
         "title": "Rádio Regina Banská Bystrica",
         "description": "Dňa 5. 9. 1957 sa po prvýkrát samostatnou spravodajskou a publicistickou  reláciou prihlásilo v rozhlasovom éteri banskobystrické štúdio"
@@ -79,6 +88,7 @@ var RadioData = {
     },
 
     "regina-ke": {
+        "stream": "Regina_KE",
         "id": 11,
         "title": "Rádio Regina Košice",
         "description": "Rádio Regina - štúdio Košice zabezpečuje autonómne regionálne vysielanie na východnom Slovensku a participuje na príprave"
@@ -86,7 +96,8 @@ var RadioData = {
     },
 
     getStreamUrl: function(radioName) {
-        return RadioData["streamUrl"].replace("XXX", radioName);
+        console.error("Radio:" + radioName);
+        return RadioData["streamUrl"].replace("XXX", RadioData[radioName].stream).replace("QQQ", Settings.isHighQuality() ? "256" : "128");
     },
 
     getPlaylistUrl: function(radioName) {

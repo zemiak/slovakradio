@@ -24,4 +24,12 @@ class Configuration {
     func getEnvironment() -> String {
         return config["Environment"]!
     }
+
+    func getVersion() -> String {
+        return NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
+    }
+
+    func isDevelopment() -> Bool {
+        return "Development" == getEnvironment()
+    }
 }

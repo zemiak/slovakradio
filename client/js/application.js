@@ -4,7 +4,9 @@ App.onLaunch = function(options) {
     var javascriptFiles = [
         `${options.BaseUrl}js/Presenter.js`,
         `${options.BaseUrl}js/ResourceLoader.js`,
-        `${options.BaseUrl}js/RadioData.js`
+        `${options.BaseUrl}js/RadioData.js`,
+        `${options.BaseUrl}js/Settings.js`,
+        `${options.BaseUrl}js/RadioPlayer.js`,
     ];
     
     evaluateScripts(javascriptFiles, function(success) {
@@ -12,6 +14,8 @@ App.onLaunch = function(options) {
             resourceLoader = new ResourceLoader(options.BaseUrl);
             resourceLoader.loadResource(`${options.BaseUrl}templates/Main.xml.js`, function(resource) {
                 Presenter.BaseUrl = options.BaseUrl;
+                Presenter.options = options;
+                Presenter.settings = Settings;
                 var doc = Presenter.makeDocument(resource);
                 doc.addEventListener("select", Presenter.load.bind(Presenter));
                 Presenter.pushDocument(doc);
