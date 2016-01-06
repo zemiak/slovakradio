@@ -11,7 +11,7 @@ var Template = function() {
     var items = "";
 
     return `<document>
-   <compilationTemplate theme="light">
+   <compilationTemplate theme="light" id="template-data" data-radioName="${radioName}" data-template="Detail">
       <list>
          <relatedContent>
             <itemBanner>

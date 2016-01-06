@@ -1,5 +1,5 @@
 var Template = function() { return `<document>
-<showcaseTemplate mode="showcase">
+<showcaseTemplate mode="showcase" id="template-data" data-template="Main">
     <background>
         <img src="${this.BaseUrl}images/background.jpg" width="1024" height="486" />
     </background>
