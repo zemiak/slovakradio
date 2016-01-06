@@ -18,47 +18,47 @@ var Template = function() { return `<document>
 
     <carousel>
         <section>
-            <lockup action="RadioPlayer.play('slovensko')">
+            <lockup action="RadioPlayer.setupDetail('slovensko')">
                 <img src="${this.BaseUrl}images/slovensko.png" width="440" height="242" />
             </lockup>
 
-            <lockup action="RadioPlayer.play('fm')">
+            <lockup action="RadioPlayer.setupDetail('fm')">
                 <img src="${this.BaseUrl}images/fm.png" width="440" height="242" />
             </lockup>
 
-            <lockup action="RadioPlayer.play('junior')">
+            <lockup action="RadioPlayer.setupDetail('junior')">
                 <img src="${this.BaseUrl}images/junior.png" width="440" height="242" />
             </lockup>
 
-            <lockup action="RadioPlayer.play('devin')">
+            <lockup action="RadioPlayer.setupDetail('devin')">
                 <img src="${this.BaseUrl}images/devin.png" width="440" height="242" />
             </lockup>
 
-            <lockup action="RadioPlayer.play('regina-ba')">
+            <lockup action="RadioPlayer.setupDetail('regina-ba')">
                 <img src="${this.BaseUrl}images/regina-ba.png" width="440" height="242" />
             </lockup>
 
-            <lockup action="RadioPlayer.play('klasika')">
+            <lockup action="RadioPlayer.setupDetail('klasika')">
                 <img src="${this.BaseUrl}images/klasika.png" width="440" height="242" />
             </lockup>
 
-            <lockup action="RadioPlayer.play('regina-bb')">
+            <lockup action="RadioPlayer.setupDetail('regina-bb')">
                 <img src="${this.BaseUrl}images/regina-bb.png" width="440" height="242" />
             </lockup>
 
-            <lockup action="RadioPlayer.play('regina-ke')">
+            <lockup action="RadioPlayer.setupDetail('regina-ke')">
                 <img src="${this.BaseUrl}images/regina-ke.png" width="440" height="242" />
             </lockup>
 
-            <lockup action="RadioPlayer.play('litera')">
+            <lockup action="RadioPlayer.setupDetail('litera')">
                 <img src="${this.BaseUrl}images/litera.png" width="440" height="242" />
             </lockup>
 
-            <lockup action="RadioPlayer.play('patria')">
+            <lockup action="RadioPlayer.setupDetail('patria')">
                 <img src="${this.BaseUrl}images/patria.png" width="440" height="242" />
             </lockup>
 
-            <lockup action="RadioPlayer.play('')rsi">
+            <lockup action="RadioPlayer.setupDetail('rsi')">
                 <img src="${this.BaseUrl}images/rsi.png" width="440" height="242" />
             </lockup>
         </section>

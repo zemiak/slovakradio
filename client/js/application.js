@@ -6,7 +6,7 @@ App.onLaunch = function(options) {
         `${options.BaseUrl}js/ResourceLoader.js`,
         `${options.BaseUrl}js/RadioData.js`,
         `${options.BaseUrl}js/Settings.js`,
-        `${options.BaseUrl}js/RadioPlayer.js`,
+        `${options.BaseUrl}js/RadioPlayer.js`
     ];
     
     evaluateScripts(javascriptFiles, function(success) {

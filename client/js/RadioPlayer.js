@@ -1,15 +1,21 @@
 var RadioPlayer = {
     player: null,
+    radioName: null,
+    playing: false,
 
     stop: function() {
         if (RadioPlayer.player) {
             RadioPlayer.player.stop();
+            RadioPlayer.playing = false;
         }
     },
 
-    play: function(radioName) {
+    isPlaying: function() {
+        return RadioPlayer.playing;
+    },
+
+    setupDetail: function(radioName) {
         if (! RadioPlayer.player) {
-            RadioPlayer.stop();
             RadioPlayer.player = new Player();
             RadioPlayer.player.playlist = new Playlist();
         }
@@ -23,7 +29,19 @@ var RadioPlayer = {
         mediaItem.description = RadioData[radioName].description;
 
         RadioPlayer.player.playlist.push(mediaItem);
-        RadioPlayer.player.present();
-        RadioPlayer.player.play();
+        RadioPlayer.radioName = radioName;
+
+        Presenter.navigate("Detail");
+    },
+
+    play: function() {
+        if (RadioPlayer.player) {
+            RadioPlayer.player.play();
+            RadioPlayer.playing = true;
+        }
+    },
+
+    getRadioName: function() {
+        return RadioPlayer.radioName;
     }
 };
