@@ -14,18 +14,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TVApplicationControllerDe
 
     var window: UIWindow?
     var appController: TVApplicationController?
-
-    // static let BaseUrl = "http://localhost:9001/" // DEV setting. In the ${project}/client folder, run python -m SimpleHTTPServer 9001
-    static let BaseUrl =  "http://zemiak.github.io/slovakradio/server/v1/" // PROD setting
-
-    static let BootUrl = "\(AppDelegate.BaseUrl)js/application.js"
+    var config: Configuration?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
 
         let appControllerContext = TVApplicationControllerContext()
-
-        let javascriptURL = NSURL(string: AppDelegate.BootUrl)
+        let config = Configuration()
+        let BaseUrl = config.getBaseUrl()
+        let BootUrl = "\(BaseUrl)js/application.js"
+        let javascriptURL = NSURL(string: BootUrl)
 
         appControllerContext.javaScriptApplicationURL = javascriptURL!
         if let options = launchOptions {
@@ -36,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TVApplicationControllerDe
             }
         }
 
-        appControllerContext.launchOptions["BaseUrl"] = AppDelegate.BaseUrl
+        appControllerContext.launchOptions["BaseUrl"] = BaseUrl
         self.appController = TVApplicationController(context: appControllerContext, window: self.window, delegate: self)
 
         return true
@@ -63,7 +61,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TVApplicationControllerDe
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 

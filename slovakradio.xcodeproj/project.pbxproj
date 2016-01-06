@@ -12,6 +12,9 @@
 		B827CFAE1C34F90200F9CC76 /* slovakradioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827CFAD1C34F90200F9CC76 /* slovakradioUITests.swift */; };
 		B85CD8271C368DAB0058C2BA /* docs in Resources */ = {isa = PBXBuildFile; fileRef = B85CD8251C368DAB0058C2BA /* docs */; };
 		B85CD8281C368DAB0058C2BA /* client in Resources */ = {isa = PBXBuildFile; fileRef = B85CD8261C368DAB0058C2BA /* client */; };
+		B8B784561C39221000192762 /* Development.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8B784551C39221000192762 /* Development.plist */; };
+		B8B784581C39221D00192762 /* Production.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8B784571C39221D00192762 /* Production.plist */; };
+		B8B7845A1C3D07D600192762 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B784591C3D07D600192762 /* Configuration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,9 @@
 		B827CFB81C34F98900F9CC76 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B85CD8251C368DAB0058C2BA /* docs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = docs; sourceTree = "<group>"; };
 		B85CD8261C368DAB0058C2BA /* client */ = {isa = PBXFileReference; lastKnownFileType = folder; path = client; sourceTree = "<group>"; };
+		B8B784551C39221000192762 /* Development.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Development.plist; sourceTree = "<group>"; };
+		B8B784571C39221D00192762 /* Production.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Production.plist; sourceTree = "<group>"; };
+		B8B784591C3D07D600192762 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,9 @@
 				B827CF9B1C34F90200F9CC76 /* AppDelegate.swift */,
 				B827CFA21C34F90200F9CC76 /* Assets.xcassets */,
 				B827CFA41C34F90200F9CC76 /* Info.plist */,
+				B8B784551C39221000192762 /* Development.plist */,
+				B8B784571C39221D00192762 /* Production.plist */,
+				B8B784591C3D07D600192762 /* Configuration.swift */,
 			);
 			path = slovakradio;
 			sourceTree = "<group>";
@@ -177,7 +186,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B827CFA31C34F90200F9CC76 /* Assets.xcassets in Resources */,
+				B8B784581C39221D00192762 /* Production.plist in Resources */,
 				B85CD8281C368DAB0058C2BA /* client in Resources */,
+				B8B784561C39221000192762 /* Development.plist in Resources */,
 				B85CD8271C368DAB0058C2BA /* docs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8B7845A1C3D07D600192762 /* Configuration.swift in Sources */,
 				B827CF9C1C34F90200F9CC76 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,7 +231,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		B827CFB01C34F90200F9CC76 /* Debug */ = {
+		B827CFB01C34F90200F9CC76 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -261,9 +273,9 @@
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.1;
 			};
-			name = Debug;
+			name = Development;
 		};
-		B827CFB11C34F90200F9CC76 /* Release */ = {
+		B827CFB11C34F90200F9CC76 /* Production */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -298,35 +310,37 @@
 				TVOS_DEPLOYMENT_TARGET = 9.1;
 				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = Production;
 		};
-		B827CFB31C34F90200F9CC76 /* Debug */ = {
+		B827CFB31C34F90200F9CC76 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CONFIGURATION_PLIST = Development;
 				INFOPLIST_FILE = slovakradio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zemiak.slovakradio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
-			name = Debug;
+			name = Development;
 		};
-		B827CFB41C34F90200F9CC76 /* Release */ = {
+		B827CFB41C34F90200F9CC76 /* Production */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CONFIGURATION_PLIST = Production;
 				INFOPLIST_FILE = slovakradio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zemiak.slovakradio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
-			name = Release;
+			name = Production;
 		};
-		B827CFB61C34F90200F9CC76 /* Debug */ = {
+		B827CFB61C34F90200F9CC76 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = slovakradioUITests/Info.plist;
@@ -336,9 +350,9 @@
 				TEST_TARGET_NAME = slovakradio;
 				USES_XCTRUNNER = YES;
 			};
-			name = Debug;
+			name = Development;
 		};
-		B827CFB71C34F90200F9CC76 /* Release */ = {
+		B827CFB71C34F90200F9CC76 /* Production */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = slovakradioUITests/Info.plist;
@@ -348,7 +362,7 @@
 				TEST_TARGET_NAME = slovakradio;
 				USES_XCTRUNNER = YES;
 			};
-			name = Release;
+			name = Production;
 		};
 /* End XCBuildConfiguration section */
 
@@ -356,29 +370,29 @@
 		B827CF931C34F90200F9CC76 /* Build configuration list for PBXProject "slovakradio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B827CFB01C34F90200F9CC76 /* Debug */,
-				B827CFB11C34F90200F9CC76 /* Release */,
+				B827CFB01C34F90200F9CC76 /* Development */,
+				B827CFB11C34F90200F9CC76 /* Production */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Production;
 		};
 		B827CFB21C34F90200F9CC76 /* Build configuration list for PBXNativeTarget "slovakradio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B827CFB31C34F90200F9CC76 /* Debug */,
-				B827CFB41C34F90200F9CC76 /* Release */,
+				B827CFB31C34F90200F9CC76 /* Development */,
+				B827CFB41C34F90200F9CC76 /* Production */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Production;
 		};
 		B827CFB51C34F90200F9CC76 /* Build configuration list for PBXNativeTarget "slovakradioUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B827CFB61C34F90200F9CC76 /* Debug */,
-				B827CFB71C34F90200F9CC76 /* Release */,
+				B827CFB61C34F90200F9CC76 /* Development */,
+				B827CFB71C34F90200F9CC76 /* Production */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Production;
 		};
 /* End XCConfigurationList section */
 	};
