@@ -2,7 +2,7 @@ var Template = function() {
     var radioName = RadioPlayer.getRadioName();
     var data = RadioData[radioName]; // title, description
     var playListUrl = RadioData.getPlaylistUrl(radioName);
-    var artworkImageURL = Presenter.BaseUrl + "images/" + radioName + ".png";
+    var artworkImageURL = this.loader.imageUrl(radioName + ".png");
     var itemTemplate = "<listItemLockup>"
         + "<ordinal minLength=\"2\">OOO</ordinal>"
         + "<title>TTT</title>"

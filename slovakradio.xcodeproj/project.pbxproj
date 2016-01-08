@@ -10,8 +10,9 @@
 		B827CF9C1C34F90200F9CC76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827CF9B1C34F90200F9CC76 /* AppDelegate.swift */; };
 		B827CFA31C34F90200F9CC76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B827CFA21C34F90200F9CC76 /* Assets.xcassets */; };
 		B827CFAE1C34F90200F9CC76 /* slovakradioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827CFAD1C34F90200F9CC76 /* slovakradioUITests.swift */; };
+		B83502701C401F560092B272 /* ResourceLoaderLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B835026F1C401F560092B272 /* ResourceLoaderLocal.swift */; };
+		B83502781C40391F0092B272 /* tvml in Resources */ = {isa = PBXBuildFile; fileRef = B83502771C40391F0092B272 /* tvml */; };
 		B85CD8271C368DAB0058C2BA /* docs in Resources */ = {isa = PBXBuildFile; fileRef = B85CD8251C368DAB0058C2BA /* docs */; };
-		B85CD8281C368DAB0058C2BA /* client in Resources */ = {isa = PBXBuildFile; fileRef = B85CD8261C368DAB0058C2BA /* client */; };
 		B8B784561C39221000192762 /* Development.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8B784551C39221000192762 /* Development.plist */; };
 		B8B784581C39221D00192762 /* Production.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8B784571C39221D00192762 /* Production.plist */; };
 		B8B7845A1C3D07D600192762 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B784591C3D07D600192762 /* Configuration.swift */; };
@@ -36,8 +37,9 @@
 		B827CFAD1C34F90200F9CC76 /* slovakradioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = slovakradioUITests.swift; sourceTree = "<group>"; };
 		B827CFAF1C34F90200F9CC76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B827CFB81C34F98900F9CC76 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B835026F1C401F560092B272 /* ResourceLoaderLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceLoaderLocal.swift; sourceTree = "<group>"; };
+		B83502771C40391F0092B272 /* tvml */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tvml; sourceTree = "<group>"; };
 		B85CD8251C368DAB0058C2BA /* docs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = docs; sourceTree = "<group>"; };
-		B85CD8261C368DAB0058C2BA /* client */ = {isa = PBXFileReference; lastKnownFileType = folder; path = client; sourceTree = "<group>"; };
 		B8B784551C39221000192762 /* Development.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Development.plist; sourceTree = "<group>"; };
 		B8B784571C39221D00192762 /* Production.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Production.plist; sourceTree = "<group>"; };
 		B8B784591C3D07D600192762 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
@@ -65,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				B85CD8251C368DAB0058C2BA /* docs */,
-				B85CD8261C368DAB0058C2BA /* client */,
 				B827CFB81C34F98900F9CC76 /* README.md */,
 				B827CF9A1C34F90200F9CC76 /* slovakradio */,
 				B827CFAC1C34F90200F9CC76 /* slovakradioUITests */,
@@ -85,12 +86,14 @@
 		B827CF9A1C34F90200F9CC76 /* slovakradio */ = {
 			isa = PBXGroup;
 			children = (
+				B83502771C40391F0092B272 /* tvml */,
 				B827CF9B1C34F90200F9CC76 /* AppDelegate.swift */,
 				B827CFA21C34F90200F9CC76 /* Assets.xcassets */,
 				B827CFA41C34F90200F9CC76 /* Info.plist */,
 				B8B784551C39221000192762 /* Development.plist */,
 				B8B784571C39221D00192762 /* Production.plist */,
 				B8B784591C3D07D600192762 /* Configuration.swift */,
+				B835026F1C401F560092B272 /* ResourceLoaderLocal.swift */,
 			);
 			path = slovakradio;
 			sourceTree = "<group>";
@@ -187,7 +190,7 @@
 			files = (
 				B827CFA31C34F90200F9CC76 /* Assets.xcassets in Resources */,
 				B8B784581C39221D00192762 /* Production.plist in Resources */,
-				B85CD8281C368DAB0058C2BA /* client in Resources */,
+				B83502781C40391F0092B272 /* tvml in Resources */,
 				B8B784561C39221000192762 /* Development.plist in Resources */,
 				B85CD8271C368DAB0058C2BA /* docs in Resources */,
 			);
@@ -209,6 +212,7 @@
 			files = (
 				B8B7845A1C3D07D600192762 /* Configuration.swift in Sources */,
 				B827CF9C1C34F90200F9CC76 /* AppDelegate.swift in Sources */,
+				B83502701C401F560092B272 /* ResourceLoaderLocal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,7 +326,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zemiak.slovakradio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
 			};
 			name = Development;
 		};
@@ -336,7 +340,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zemiak.slovakradio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
 			};
 			name = Production;
 		};

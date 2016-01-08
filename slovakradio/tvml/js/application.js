@@ -1,25 +1,22 @@
 var resourceLoader;
+var resourceLoaderLocal;
 
 App.onLaunch = function(options) {
+    resourceLoaderLocal = ResourceLoaderLocal.create();
+
     var javascriptFiles = [
-        `${options.BaseUrl}js/Presenter.js`,
-        `${options.BaseUrl}js/ResourceLoader.js`,
-        `${options.BaseUrl}js/RadioData.js`,
-        `${options.BaseUrl}js/Settings.js`,
-        `${options.BaseUrl}js/RadioPlayer.js`
+        resourceLoaderLocal.scriptUrl("Presenter.js"),
+        resourceLoaderLocal.scriptUrl("RadioData.js"),
+        resourceLoaderLocal.scriptUrl("Settings.js"),
+        resourceLoaderLocal.scriptUrl("RadioPlayer.js")
     ];
     
     evaluateScripts(javascriptFiles, function(success) {
         if(success) {
-            resourceLoader = new ResourceLoader(options.BaseUrl);
-            resourceLoader.loadResource(`${options.BaseUrl}templates/Main.xml.js`, function(resource) {
-                Presenter.BaseUrl = options.BaseUrl;
-                Presenter.options = options;
-                Presenter.settings = Settings;
-                var doc = Presenter.makeDocument(resource);
-                doc.addEventListener("select", Presenter.load.bind(Presenter));
-                Presenter.pushDocument(doc);
-            });
+            Presenter.options = options;
+            Presenter.settings = Settings;
+            Presenter.loader = resourceLoaderLocal;
+            Presenter.navigate("Main");
         } else {
             var errorDoc = createAlert("Evaluate Scripts Error", "Error attempting to evaluate external JavaScript files.");
             navigationDocument.presentModal(errorDoc);
@@ -31,7 +28,7 @@ App.onLaunch = function(options) {
 var createAlert = function(title, description) {
     var alertString = `<?xml version="1.0" encoding="UTF-8" ?>
     <document>
-    <alertTemplate>
+    <alertTemplate> 
     <title>${title}</title>
     <description>${description}</description>
     </alertTemplate>

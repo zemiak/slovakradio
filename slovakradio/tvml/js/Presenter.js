@@ -25,10 +25,11 @@ var Presenter = {
     },
 
     navigate: function(template) {
-        resourceLoader.loadResource(Presenter.BaseUrl + "templates/" + template + ".xml.js", function(resource) {
-            var doc = Presenter.makeDocument(resource);
-            doc.addEventListener("select", Presenter.load.bind(Presenter));
-            Presenter.pushDocument(doc);
-        });
+        var template = resourceLoaderLocal.loadBundleResource(template);
+        eval(template);
+        var res = Template.call(this);
+        var doc = Presenter.makeDocument(res);
+        doc.addEventListener("select", Presenter.load.bind(Presenter));
+        Presenter.pushDocument(doc);
     }
 }

@@ -4,7 +4,5 @@
 <dict>
 	<key>Environment</key>
 	<string>Development</string>
-	<key>BaseUrl</key>
-	<string>http://localhost:9001/</string>
 </dict>
 </plist>
