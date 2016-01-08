@@ -2,13 +2,15 @@ var Template = function() {
     var qualityText = Settings.isHighQuality() ? "vysoká" : "normálna";
 
     return `<document>
-<alertTemplate id="template-data" data-template="Settings">
+<descriptiveAlertTemplate id="template-data" data-template="Settings">
     <title>Nastavenia</title>
     <description>
-    Nastavenia prehrávania. Je nastavená ${qualityText} kvalita. Jednoduchý prehrávač rádií RTVS (C) zemiak, pozri https://github.com/zemiak/slovakradio. Licencia BSD. Artwork (C) RTVS, SITA.
-    Verzia ${Presenter.options.Version}
+        Jednoduchý prehrávač rádií RTVS (C) zemiak, pozri https://github.com/zemiak/slovakradio. Licencia BSD. Artwork (C) RTVS, SITA.
+        Verzia ${Presenter.options.Version}
+        Je nastavená: ${qualityText} kvalita.
     </description>
 
+    <row>
     <button action="Settings.highQuality()">
         <text>Vysoká kvalita</text>
     </button>
@@ -19,6 +21,7 @@ var Template = function() {
     <button action="Presenter.navigate('Main')">
         <text>Naspäť</text>
     </button>
-</alertTemplate></document>
+    </row>
+</descriptiveAlertTemplate></document>
 `;
 }
