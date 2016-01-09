@@ -1,14 +1,17 @@
 var resourceLoader;
 var resourceLoaderLocal;
+var LOG;
 
 App.onLaunch = function(options) {
     resourceLoaderLocal = ResourceLoaderLocal.create();
+    LOG = JavascriptLogger.create();
 
     var javascriptFiles = [
         resourceLoaderLocal.scriptUrl("Presenter.js"),
         resourceLoaderLocal.scriptUrl("RadioData.js"),
         resourceLoaderLocal.scriptUrl("Settings.js"),
-        resourceLoaderLocal.scriptUrl("RadioPlayer.js")
+        resourceLoaderLocal.scriptUrl("RadioPlayer.js"),
+        resourceLoaderLocal.scriptUrl("RadioPlaylist.js")
     ];
     
     evaluateScripts(javascriptFiles, function(success) {

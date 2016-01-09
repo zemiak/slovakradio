@@ -3,12 +3,10 @@ var Template = function() {
     var data = RadioData[radioName]; // title, description
     var playListUrl = RadioData.getPlaylistUrl(radioName);
     var artworkImageURL = this.loader.imageUrl(radioName + ".png");
-    var itemTemplate = "<listItemLockup>"
-        + "<ordinal minLength=\"2\">OOO</ordinal>"
-        + "<title>TTT</title>"
-        + "<decorationLabel>DDD</decorationLabel>"
-        + "</listItemLockup>";
-    var items = "";
+    var items = RadioPlaylist.getRenderedPlaylist(radioName);
+
+    LOG.log("Setting playlist refresh after 1 minute");
+    setTimeout(function(){RadioPlaylist.refreshPlaylist(radioName)}, 1000); // refresh the radio playlist after 1 minute //
 
     return `<document>
    <compilationTemplate theme="light" id="template-data" data-radioName="${radioName}" data-template="Detail">

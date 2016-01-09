@@ -6,21 +6,13 @@ Artwork has been taken from a SITA (Slovak Press Agency) and RTVS site.
 
 License: BSD
 
+## Project Type
+This project uses TVML/TVJS for presentation and small Swift helpers to load resources locally from bundle and logging.
+Traditionally, you need a web server to server the TVML/TVJS/images. This project, thanks to https://github.com/sammyd/StandaloneTVML, uses local file links and local resource loading via a small Swift helper class.
+
 ## Running
 Until this gets released in the App Store, it is a little bit complicated.
-
-First, you have to use a web server accessible from your AppleTV (can be in your local net, can be outside) to host all the TVML, JS and images.
-
-Second, you have to build the project and deploy it to the AppleTV.
-
-### Serving static content
-#### Developing
-Run the "python -m SimpleHTTPServer 9001" command in the "client" subfolder.
-
-#### Running installed on your AppleTV
-Fork this project on github, create Github Page for your project and serve the "client" subfolder from there, as you can see in the AppDelegate.swift here.
+You have to build the project and deploy it to the AppleTV via a SUB-C cable.
 
 ### Deploying to your AppleTV
 See http://9to5mac.com/2015/06/10/xcode-7-allows-anyone-to-download-build-and-sideload-ios-apps-for-free/ and http://bouk.co/blog/sideload-iphone/
-
-You will need an USB-C cable for that.

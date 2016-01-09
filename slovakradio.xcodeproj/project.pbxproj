@@ -12,6 +12,7 @@
 		B827CFAE1C34F90200F9CC76 /* slovakradioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827CFAD1C34F90200F9CC76 /* slovakradioUITests.swift */; };
 		B83502701C401F560092B272 /* ResourceLoaderLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B835026F1C401F560092B272 /* ResourceLoaderLocal.swift */; };
 		B83502781C40391F0092B272 /* tvml in Resources */ = {isa = PBXBuildFile; fileRef = B83502771C40391F0092B272 /* tvml */; };
+		B835027A1C4101F40092B272 /* JavascriptLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83502791C4101F40092B272 /* JavascriptLogger.swift */; };
 		B85CD8271C368DAB0058C2BA /* docs in Resources */ = {isa = PBXBuildFile; fileRef = B85CD8251C368DAB0058C2BA /* docs */; };
 		B8B784561C39221000192762 /* Development.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8B784551C39221000192762 /* Development.plist */; };
 		B8B784581C39221D00192762 /* Production.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8B784571C39221D00192762 /* Production.plist */; };
@@ -39,6 +40,7 @@
 		B827CFB81C34F98900F9CC76 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B835026F1C401F560092B272 /* ResourceLoaderLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceLoaderLocal.swift; sourceTree = "<group>"; };
 		B83502771C40391F0092B272 /* tvml */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tvml; sourceTree = "<group>"; };
+		B83502791C4101F40092B272 /* JavascriptLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JavascriptLogger.swift; sourceTree = "<group>"; };
 		B85CD8251C368DAB0058C2BA /* docs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = docs; sourceTree = "<group>"; };
 		B8B784551C39221000192762 /* Development.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Development.plist; sourceTree = "<group>"; };
 		B8B784571C39221D00192762 /* Production.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Production.plist; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				B8B784571C39221D00192762 /* Production.plist */,
 				B8B784591C3D07D600192762 /* Configuration.swift */,
 				B835026F1C401F560092B272 /* ResourceLoaderLocal.swift */,
+				B83502791C4101F40092B272 /* JavascriptLogger.swift */,
 			);
 			path = slovakradio;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B835027A1C4101F40092B272 /* JavascriptLogger.swift in Sources */,
 				B8B7845A1C3D07D600192762 /* Configuration.swift in Sources */,
 				B827CF9C1C34F90200F9CC76 /* AppDelegate.swift in Sources */,
 				B83502701C401F560092B272 /* ResourceLoaderLocal.swift in Sources */,

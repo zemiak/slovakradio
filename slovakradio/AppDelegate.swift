@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: TVApplicationControllerDelegate {
     func appController(appController: TVApplicationController, evaluateAppJavaScriptInContext jsContext: JSContext) {
-        // Add the resource loader here later...
         jsContext.setObject(ResourceLoaderLocal.self, forKeyedSubscript: "ResourceLoaderLocal")
+        jsContext.setObject(JavascriptLogger.self, forKeyedSubscript: "JavascriptLogger")
     }
 }

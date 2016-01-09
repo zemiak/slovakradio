@@ -31,5 +31,14 @@ var Presenter = {
         var doc = Presenter.makeDocument(res);
         doc.addEventListener("select", Presenter.load.bind(Presenter));
         Presenter.pushDocument(doc);
+    },
+
+    getDocumentName: function() {
+        var ele = Presenter.getDocumentDataElement()
+        return ele.getAttribute("data-template");
+    },
+
+    getDocumentDataElement: function() {
+        return document.getElementById("template-data");
     }
 }
