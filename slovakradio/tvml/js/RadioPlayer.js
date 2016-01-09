@@ -16,10 +16,12 @@ var RadioPlayer = {
 
     setupDetailReplace: function(radioName) {
         RadioPlayer.setupDetailPageCore(radioName, true);
+        Presenter.navigateReplace("Detail");
     },
 
     setupDetail: function(radioName) {
         RadioPlayer.setupDetailPageCore(radioName, false);
+        Presenter.navigate("Detail");
     },
 
     setupDetailPageCore: function(radioName, replace) {
@@ -38,12 +40,6 @@ var RadioPlayer = {
 
         RadioPlayer.player.playlist.push(mediaItem);
         RadioPlayer.radioName = radioName;
-
-        if (replace) {
-            Presenter.navigate("Detail");
-        } else {
-            Presenter.navigateReplace("Detail");
-        }
     },
 
     play: function() {

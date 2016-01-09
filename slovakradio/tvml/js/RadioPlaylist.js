@@ -30,23 +30,29 @@ var RadioPlaylist = {
         }
 
         var request = new XMLHttpRequest();
-        request.onLoad = RadioPlaylist.playlistLoaded;
+        request.responseType = "text";
+        request.addEventListener("load", function(){RadioPlaylist.playlistLoaded(request)});
         request.data_radioName = radioName
         request.open("GET", RadioData.getPlaylistUrl(radioName));
         request.send();
     },
 
-    playlistLoaded: function() {
-        var radioName = this.data_radioName;
-        var response = this.responseText;
+    playlistLoaded: function(that) {
+        var radioName = that.data_radioName;
+        var response = that.responseText;
 
-        playlists[radioName] = RadioPlaylistParser.getParsedPlaylist(response);
+        RadioPlaylist.playlists[radioName] = RadioPlaylistParser.getParsedPlaylist(response);
 
         if (!RadioPlaylist.isRadioPage(radioName)) {
+            LOG.log("RadioPlaylist.playlistLoaded: not replaced the playlist on page, because we are not on the right page");
             return;
         }
 
-        setTimeout(function(){RadioPlaylist.refreshPlaylist(radioName)}, 1000); // refresh the radio playlist again after 1 minute //
-        RadioPlayer.setupDetailReplace(radioName);
+        setTimeout(function(){RadioPlaylist.refreshPlaylist(radioName)}, 30000); // refresh the radio playlist again after 1 minute //
+
+        var doc = Presenter.getCurrentDocument();
+        var ele = doc.getElementById("playlist");
+        ele.innerHTML = RadioPlaylist.getRenderedPlaylist(radioName);
+        LOG.log("Replaced playlist content");
     }
 };

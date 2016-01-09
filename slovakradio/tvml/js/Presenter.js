@@ -16,7 +16,7 @@ var Presenter = {
     },
 
     replaceDocument: function(xml) {
-        navigationDocument.replaceDocument(xml);
+        navigationDocument.replaceDocument(xml, Presenter.getCurrentDocument());
     },
 
     load: function(event) {
@@ -54,6 +54,11 @@ var Presenter = {
     },
 
     getDocumentDataElement: function() {
+        var document = Presenter.getCurrentDocument();
         return document.getElementById("template-data");
+    },
+
+    getCurrentDocument: function() {
+        return navigationDocument.documents[navigationDocument.documents.length - 1];
     }
 }
