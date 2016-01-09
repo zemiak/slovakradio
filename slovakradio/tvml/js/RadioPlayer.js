@@ -14,7 +14,15 @@ var RadioPlayer = {
         return RadioPlayer.playing;
     },
 
+    setupDetailReplace: function(radioName) {
+        RadioPlayer.setupDetailPageCore(radioName, true);
+    },
+
     setupDetail: function(radioName) {
+        RadioPlayer.setupDetailPageCore(radioName, false);
+    },
+
+    setupDetailPageCore: function(radioName, replace) {
         if (! RadioPlayer.player) {
             RadioPlayer.player = new Player();
             RadioPlayer.player.playlist = new Playlist();
@@ -31,7 +39,11 @@ var RadioPlayer = {
         RadioPlayer.player.playlist.push(mediaItem);
         RadioPlayer.radioName = radioName;
 
-        Presenter.navigate("Detail");
+        if (replace) {
+            Presenter.navigate("Detail");
+        } else {
+            Presenter.navigateReplace("Detail");
+        }
     },
 
     play: function() {

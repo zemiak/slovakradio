@@ -12,7 +12,5 @@ Traditionally, you need a web server to server the TVML/TVJS/images. This projec
 
 ## Running
 Until this gets released in the App Store, it is a little bit complicated.
-You have to build the project and deploy it to the AppleTV via a SUB-C cable.
-
-### Deploying to your AppleTV
+You have to build the project and deploy it to the AppleTV via a USB-C cable.
 See http://9to5mac.com/2015/06/10/xcode-7-allows-anyone-to-download-build-and-sideload-ios-apps-for-free/ and http://bouk.co/blog/sideload-iphone/

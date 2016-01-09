@@ -11,7 +11,8 @@ App.onLaunch = function(options) {
         resourceLoaderLocal.scriptUrl("RadioData.js"),
         resourceLoaderLocal.scriptUrl("Settings.js"),
         resourceLoaderLocal.scriptUrl("RadioPlayer.js"),
-        resourceLoaderLocal.scriptUrl("RadioPlaylist.js")
+        resourceLoaderLocal.scriptUrl("RadioPlaylist.js"),
+        resourceLoaderLocal.scriptUrl("RadioPlaylistParser.js")
     ];
     
     evaluateScripts(javascriptFiles, function(success) {

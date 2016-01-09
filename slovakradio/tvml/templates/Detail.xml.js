@@ -5,7 +5,6 @@ var Template = function() {
     var artworkImageURL = this.loader.imageUrl(radioName + ".png");
     var items = RadioPlaylist.getRenderedPlaylist(radioName);
 
-    LOG.log("Setting playlist refresh after 1 minute");
     setTimeout(function(){RadioPlaylist.refreshPlaylist(radioName)}, 1000); // refresh the radio playlist after 1 minute //
 
     return `<document>
