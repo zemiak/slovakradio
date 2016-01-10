@@ -40,6 +40,14 @@ var RadioPlayer = {
 
         RadioPlayer.player.playlist.push(mediaItem);
         RadioPlayer.radioName = radioName;
+
+        RadioPlayer.player.addEventListener("stateDidChange", function(e) {
+            LOG.log("RadioPlayer.setupDetailPageCore.stateDidChange: " + RadioPlayer.player.playbackState);
+        }, false);
+    },
+
+    isMyRadioPlaying: function(radioName) {
+        return RadioPlayer.radioName === radioName;
     },
 
     play: function() {

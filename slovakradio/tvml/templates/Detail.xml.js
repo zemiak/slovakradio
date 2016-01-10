@@ -5,7 +5,7 @@ var Template = function() {
     var artworkImageURL = this.loader.imageUrl(radioName + ".png");
     var items = RadioPlaylist.getRenderedPlaylist(radioName);
 
-    setTimeout(function(){RadioPlaylist.refreshPlaylist(radioName)}, 60000); // refresh the radio playlist after 1 minute //
+    RadioPlaylist.refreshPlaylist(radioName); // refresh the radio playlist after 1 minute //
 
     return `<document>
    <compilationTemplate theme="light" id="template-data" data-radioName="${radioName}" data-template="Detail">

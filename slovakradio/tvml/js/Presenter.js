@@ -60,5 +60,13 @@ var Presenter = {
 
     getCurrentDocument: function() {
         return navigationDocument.documents[navigationDocument.documents.length - 1];
+    },
+
+    getRadioNameFromPage: function() {
+        if (Presenter.getDocumentName() == "Detail") {
+            return Presenter.getDocumentDataElement().getAttribute("data-radioName");
+        }
+
+        return null;
     }
 }

@@ -18,17 +18,12 @@ var RadioPlaylist = {
         return items;
     },
 
-    isRadioPage: function(radioName) {
-        var name = Presenter.getDocumentName();
-        var ele = Presenter.getDocumentDataElement();
-        return null !== name && name === "Detail" && ele.getAttribute("data-radioName") === radioName;
-    },
-
     refreshPlaylist: function(radioName) {
-        if (!RadioPlaylist.isRadioPage(radioName)) {
+        if (!RadioPlayer.isMyRadioPlaying(radioName)) {
             return;
         }
 
+        LOG.log("RadioPlaylist.refreshPlaylist: Refreshing playlist for " + radioName);
         var request = new XMLHttpRequest();
         request.responseType = "text";
         request.addEventListener("load", function(){RadioPlaylist.playlistLoaded(request)});
@@ -43,16 +38,16 @@ var RadioPlaylist = {
 
         RadioPlaylist.playlists[radioName] = RadioPlaylistParser.getParsedPlaylist(response);
 
-        if (!RadioPlaylist.isRadioPage(radioName)) {
-            LOG.log("RadioPlaylist.playlistLoaded: not replaced the playlist on page, because we are not on the right page");
+        if (Presenter.getRadioNameFromPage() !== radioName) {
+            LOG.log("RadioPlaylist.playlistLoaded: not replaced the playlist on page, because we are on " + Presenter.getRadioNameFromPage());
             return;
         }
 
-        setTimeout(function(){RadioPlaylist.refreshPlaylist(radioName)}, 30000); // refresh the radio playlist again after 1 minute //
+        setTimeout(function(){RadioPlaylist.refreshPlaylist(radioName)}, 60000); // refresh the radio playlist again after 60 seconds //
 
         var doc = Presenter.getCurrentDocument();
         var ele = doc.getElementById("playlist");
         ele.innerHTML = RadioPlaylist.getRenderedPlaylist(radioName);
-        LOG.log("Replaced playlist content");
+        LOG.log("RadioPlaylist.playlistLoaded: Replaced playlist content for " + radioName + ". Another refresh after 60s. " + ele.innerHTML);
     }
 };
