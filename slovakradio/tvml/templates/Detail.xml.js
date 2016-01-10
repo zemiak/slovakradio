@@ -1,7 +1,7 @@
 var Template = function() {
     var radioName = RadioPlayer.getRadioName();
-    var data = RadioData[radioName]; // title, description
-    var playListUrl = RadioData.getPlaylistUrl(radioName);
+    var data = RadioRepository.getRadioData(radioName); // title, description
+    var playListUrl = RadioRepository.getPlaylistUrl(radioName);
     var artworkImageURL = this.loader.imageUrl(radioName + ".png");
     var items = RadioPlaylist.getRenderedPlaylist(radioName);
 

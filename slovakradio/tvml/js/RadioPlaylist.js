@@ -23,12 +23,16 @@ var RadioPlaylist = {
             return;
         }
 
+        if (null === RadioRepository.getPlaylistUrl(radioName)) {
+            return;
+        }
+
         LOG.log("RadioPlaylist.refreshPlaylist: Refreshing playlist for " + radioName);
         var request = new XMLHttpRequest();
         request.responseType = "text";
         request.addEventListener("load", function(){RadioPlaylist.playlistLoaded(request)});
         request.data_radioName = radioName
-        request.open("GET", RadioData.getPlaylistUrl(radioName));
+        request.open("GET", RadioRepository.getPlaylistUrl(radioName));
         request.send();
     },
 

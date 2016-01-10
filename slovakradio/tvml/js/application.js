@@ -9,6 +9,7 @@ App.onLaunch = function(options) {
     var javascriptFiles = [
         resourceLoaderLocal.scriptUrl("Presenter.js"),
         resourceLoaderLocal.scriptUrl("RadioData.js"),
+        resourceLoaderLocal.scriptUrl("RadioRepository.js"),
         resourceLoaderLocal.scriptUrl("Settings.js"),
         resourceLoaderLocal.scriptUrl("RadioPlayer.js"),
         resourceLoaderLocal.scriptUrl("RadioPlaylist.js"),

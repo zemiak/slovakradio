@@ -32,11 +32,12 @@ var RadioPlayer = {
 
         RadioPlayer.player.playlist.pop(); // clear the playlist
 
-        var mediaItem = new MediaItem("audio", RadioData.getStreamUrl(radioName));
+        var mediaItem = new MediaItem("audio", RadioRepository.getStreamUrl(radioName));
         mediaItem.artworkImageURL = Presenter.loader.imageUrl(radioName + ".png");
 
-        mediaItem.title = RadioData[radioName].title;
-        mediaItem.description = RadioData[radioName].description;
+        var data = RadioRepository.getRadioData(radioName);
+        mediaItem.title = data.title;
+        mediaItem.description = data.description;
 
         RadioPlayer.player.playlist.push(mediaItem);
         RadioPlayer.radioName = radioName;
