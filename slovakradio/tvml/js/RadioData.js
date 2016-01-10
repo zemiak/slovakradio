@@ -5,7 +5,16 @@ var RadioData = {
     },
 
     "collections": {
-        "rtvs": ["fm", "slovensko", "junior", "devin", "klasika", "regina-ba", "regina-bb", "regina-ke", "litera", "rsi", "patria"]
+        "favorites": {
+            "title": "Obľúbené",
+            "description": "Rádiá označené ako obľúbené",
+            "items": {}
+        },
+        "rtvs": {
+            "title": "RTVS",
+            "description": "Rádiá RTVS",
+            "items": ["fm", "slovensko", "junior", "devin", "klasika", "regina-ba", "regina-bb", "regina-ke", "litera", "rsi", "patria"]
+        },
     },
 
     "relations": {

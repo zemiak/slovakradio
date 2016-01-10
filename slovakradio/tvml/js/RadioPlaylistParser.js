@@ -44,7 +44,7 @@ var RadioPlaylistParser = {
         }
         var endPos = line.indexOf("</span>");
 
-        times.push(line.substring(pos + SEARCH.length, endPos));
+        times.push(RadioPlaylistParser.encode(line.substring(pos + SEARCH.length, endPos)));
     },
 
     parseTitle: function(line, titles) {
@@ -55,7 +55,7 @@ var RadioPlaylistParser = {
         }
         var endPos = line.indexOf("</span>");
 
-        titles.push(line.substring(pos + SEARCH.length, endPos));
+        titles.push(RadioPlaylistParser.encode(line.substring(pos + SEARCH.length, endPos)));
     },
 
     parseArtist: function(line, artists) {
@@ -66,6 +66,10 @@ var RadioPlaylistParser = {
         }
         var endPos = line.indexOf("</span>");
 
-        artists.push(line.substring(pos + SEARCH.length, endPos));
+        artists.push(RadioPlaylistParser.encode(line.substring(pos + SEARCH.length, endPos)));
+    },
+
+    encode: function(text) {
+        return text.replace("&", "&amp;");
     }
 };

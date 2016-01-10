@@ -13,7 +13,8 @@ var RadioRepository = {
 
     getRadios: function() {
         var keys = []
-        for (key in RadioData.radios) {
+        var obj = RadioData.radios;
+        for (key in obj) {
             if (Object.prototype.hasOwnProperty.call(obj, key)) {
                 keys.push(key);
             }
@@ -24,7 +25,8 @@ var RadioRepository = {
 
     getRelations: function() {
         var keys = []
-        for (key in RadioData.relations) {
+        var obj = RadioData.relations;
+        for (key in obj) {
             if (Object.prototype.hasOwnProperty.call(obj, key)) {
                 keys.push(key);
             }
@@ -35,7 +37,8 @@ var RadioRepository = {
 
     getCollections: function() {
         var keys = []
-        for (key in RadioData.collections) {
+        var obj = RadioData.collections;
+        for (key in obj) {
             if (Object.prototype.hasOwnProperty.call(obj, key)) {
                 keys.push(key);
             }

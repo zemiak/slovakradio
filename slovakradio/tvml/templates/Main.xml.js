@@ -1,68 +1,72 @@
-var Template = function() { return `<document>
-<showcaseTemplate mode="showcase" id="template-data" data-template="Main">
-    <background>
-        <img src="${this.loader.imageUrl('background.jpg')}" width="1024" height="486" />
-    </background>
+var MainTemplate = {
+    width: 293,
+    height: 161,
 
+    renderCollections: function() {
+        var text = "";
+        var collections = RadioRepository.getCollections();
+        for (collection of collections) {
+            if ("favorites" === collection) {
+                // render favorites //
+            } else {
+                text += MainTemplate.renderCollection(collection);
+            }
+        }
+
+        return text;
+    },
+
+    renderCollection: function(name) {
+        var data = RadioRepository.getCollectionData(name);
+        var items = MainTemplate.renderItems(data);
+
+        return `<listItemLockup><title>${data.title}</title><decorationLabel>${data.items.length}</decorationLabel>
+            <relatedContent><grid><section>${items}</section></grid></relatedContent></listItemLockup>`;
+    },
+
+    renderItems: function(data) {
+        var text = "";
+        var items = data.items;
+        for (key of items) {
+            var data = RadioRepository.getRadioData(key);
+            text += MainTemplate.renderItem(key, data);
+        }
+
+        return text;
+    },
+
+    renderItem: function(key, data) {
+        return `<lockup action="RadioPlayer.setupDetail('${key}')">
+        <img src="${Presenter.loader.imageUrl(key + ".png")}" width="${MainTemplate.width}" height="${MainTemplate.height}" />
+        <title>${data.title}</title>
+        </lockup>`;
+    }
+};
+
+var Template = function() {
+    var sections = MainTemplate.renderCollections();
+    var items = `<lockup action="Presenter.navigate('Settings')">
+    <img src="resource://button-checkmark" width="${MainTemplate.width}" height="${MainTemplate.height}" />
+    <title>Nastavenia</title>
+    </lockup>
+
+    <lockup action="RadioPlayer.stop()">
+    <img src="resource://button-more" width="${MainTemplate.width}" height="${MainTemplate.height}" />
+    <title>Stop</title>
+    </lockup>`;
+    sections += `<listItemLockup><title>Nastavenia</title><decorationLabel>2</decorationLabel>
+    <relatedContent><grid><section>${items}</section></grid></relatedContent></listItemLockup>`;
+
+    var html = `<document>
+<catalogTemplate mode="showcase" id="template-data" data-template="Main">
     <banner>
-        <row>
-            <button action="Presenter.navigate('Settings')">
-                <text>Nastavenia</text>
-            </button>
-
-            <button action="RadioPlayer.stop()">
-                <text>Stop</text>
-            </button>
-        </row>
+        <title>:RÁDIÁ SK</title>
     </banner>
 
-    <carousel>
-        <section>
-            <lockup action="RadioPlayer.setupDetail('slovensko')">
-                <img src="${this.loader.imageUrl('slovensko.png')}" width="440" height="242" />
-            </lockup>
-
-            <lockup action="RadioPlayer.setupDetail('fm')">
-                <img src="${this.loader.imageUrl('fm.png')}" width="440" height="242" />
-            </lockup>
-
-            <lockup action="RadioPlayer.setupDetail('junior')">
-                <img src="${this.loader.imageUrl('junior.png')}" width="440" height="242" />
-            </lockup>
-
-            <lockup action="RadioPlayer.setupDetail('devin')">
-                <img src="${this.loader.imageUrl('devin.png')}" width="440" height="242" />
-            </lockup>
-
-            <lockup action="RadioPlayer.setupDetail('regina-ba')">
-                <img src="${this.loader.imageUrl('regina-ba.png')}" width="440" height="242" />
-            </lockup>
-
-            <lockup action="RadioPlayer.setupDetail('klasika')">
-                <img src="${this.loader.imageUrl('klasika.png')}" width="440" height="242" />
-            </lockup>
-
-            <lockup action="RadioPlayer.setupDetail('regina-bb')">
-                <img src="${this.loader.imageUrl('regina-bb.png')}" width="440" height="242" />
-            </lockup>
-
-            <lockup action="RadioPlayer.setupDetail('regina-ke')">
-                <img src="${this.loader.imageUrl('regina-ke.png')}" width="440" height="242" />
-            </lockup>
-
-            <lockup action="RadioPlayer.setupDetail('litera')">
-                <img src="${this.loader.imageUrl('litera.png')}" width="440" height="242" />
-            </lockup>
-
-            <lockup action="RadioPlayer.setupDetail('patria')">
-                <img src="${this.loader.imageUrl('patria.png')}" width="440" height="242" />
-            </lockup>
-
-            <lockup action="RadioPlayer.setupDetail('rsi')">
-                <img src="${this.loader.imageUrl('rsi.png')}" width="440" height="242" />
-            </lockup>
-        </section>
-    </carousel>
-</showcaseTemplate></document>
+    <list><section>
+    ${sections}
+    </section></list>
+</catalogTemplate></document>
 `;
+    return html;
 }
