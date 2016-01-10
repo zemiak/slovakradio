@@ -15,15 +15,40 @@ var RadioData = {
             "description": "Rádiá RTVS",
             "items": ["fm", "slovensko", "junior", "devin", "klasika", "regina-ba", "regina-bb", "regina-ke", "litera", "rsi", "patria"]
         },
+        "misc": {
+            "title": "Ostatné",
+            "description": "Slovenské rádiá nezaradené inde",
+            "items": ["rockova-republika", "antena-rock"]
+        },
     },
 
     "relations": {
-        "rock": ["fm"],
+        "rock": ["fm", "rockova-republika", "antena-rock"],
         "classic": ["devin", "klasika"],
         "news": ["slovensko", "regina-ba", "regina-bb", "regina-ke"]
     },
 
     "radios": {
+        "rockova-republika": {
+            "relation": "rock",
+            "collection": "misc",
+            "kind": "misc",
+            "stream": "http://217.67.31.66:8000/republika128.mp3",
+            "playlist": null, // http://www.radia.sk/radia/rockova-republika/playlist.html //
+            "title": "Rocková republika",
+            "description": "Rádio Rocková republika prináša rock z rockov sedemdesiatych až po súčasnosť"
+        },
+
+        "antena-rock": {
+            "relation": "rock",
+            "collection": "misc",
+            "kind": "misc",
+            "stream": "http://stream.antenarock.sk/antena-hi.mp3",
+            "playlist": null, // http://www.radia.sk/radia/antena-rock/playlist.html //
+            "title": "Anténa Rock",
+            "description": "Rádio Anténa Rock je rádio pre všetkých milovníkov rockovej hudby!"
+        },
+
         "slovensko": {
             "relation": "news",
             "collection": "rtvs",

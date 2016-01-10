@@ -54,7 +54,7 @@ var RadioRepository = {
             return RadioData.rtvs.streamUrl.replace("XXX", data.stream).replace("QQQ", Settings.isHighQuality() ? "256" : "128");
         }
 
-        return null;
+        return data.stream;
     },
 
     getPlaylistUrl: function(radioName) {
@@ -64,6 +64,6 @@ var RadioRepository = {
             return RadioData.rtvs.playlistUrl.replace("XXX", data.id);
         }
 
-        return null;
+        return data.playlist;
     }
 };
