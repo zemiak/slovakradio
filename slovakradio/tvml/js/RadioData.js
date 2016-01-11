@@ -10,12 +10,14 @@ var RadioData = {
             "description": "Rádiá označené ako obľúbené",
             "items": {}
         },
+
         "rtvs": {
             "title": "RTVS",
             "description": "Rádiá RTVS",
             "items": ["fm", "slovensko", "junior", "devin", "klasika", "regina-ba",
                 "regina-bb", "regina-ke", "litera", "rsi", "patria"]
         },
+
         "fun": {
             "title": "FUN Rádio",
             "description": "FUN Rádio Streams",
@@ -23,6 +25,7 @@ var RadioData = {
                 "fun-dance", "fun-news", "fun-czsk", "fun-8090", "fun-hiphop",
                 "fun-children", "fun-rock", "fun-love"]
         },
+
         "misc": {
             "title": "Ostatné",
             "description": "Slovenské rádiá nezaradené inde",
@@ -46,7 +49,7 @@ var RadioData = {
             "collection": "misc",
             "kind": "misc",
             "stream": "http://85.248.7.162:8000/128.mp3",
-            "playlist": null, // http://www.radia.sk/radia/expres/playlist.html //
+            "playlist": "http://www.radia.sk/radia/expres/playlist.html",
             "title": "Expres",
             "description": "Baví nás baviť vás"
         },
@@ -56,7 +59,7 @@ var RadioData = {
             "collection": "misc",
             "kind": "misc",
             "stream": "http://stream.jemne.sk/jemne-hi.mp3",
-            "playlist": null, // http://www.radia.sk/radia/jemne/playlist.html //
+            "playlist": "http://www.radia.sk/radia/jemne/playlist.html",
             "title": "Rádio Jemné",
             "description": "Hráme skvelú hudbu, ktorá sa vám páči, pohodovú, príjemnú, pri ktorej môžete pracovať, oddychovať, venovať sa rodine alebo len tak príjemne oddychovať"
         },
@@ -66,7 +69,7 @@ var RadioData = {
             "collection": "fun",
             "kind": "misc",
             "stream": "http://stream.funradio.sk:8000/slow128.mp3",
-            "playlist": null, // http://www.radia.sk/radia/fun-love-songs/playlist.html //
+            "playlist": "http://www.radia.sk/radia/fun-love-songs/playlist.html",
             "title": "Love Songs",
             "description": "Pesničky o láske"
         },
@@ -76,7 +79,7 @@ var RadioData = {
             "collection": "fun",
             "kind": "misc",
             "stream": "http://stream.funradio.sk:8000/fun128.mp3",
-            "playlist": null, // http://www.radia.sk/radia/fun/playlist.html //
+            "playlist": "http://www.radia.sk/radia/fun/playlist.html",
             "title": "Live",
             "description": "Živé vysielanie FUN rádia"
         },
@@ -96,7 +99,7 @@ var RadioData = {
             "collection": "fun",
             "kind": "misc",
             "stream": "http://stream.funradio.sk:8000/running128.mp3",
-            "playlist": null, // http://www.radia.sk/radia/fun-running/playlist.html //
+            "playlist": "http://www.radia.sk/radia/fun-running/playlist.html",
             "title": "Running",
             "description": "Bežecká hudba FUN rádia"
         },
@@ -106,7 +109,7 @@ var RadioData = {
             "collection": "fun",
             "kind": "misc",
             "stream": "http://stream.funradio.sk:8000/top20128.mp3",
-            "playlist": null, // http://www.radia.sk/radia/fun-top-20/playlist.html //
+            "playlist": "http://www.radia.sk/radia/fun-top-20/playlist.html",
             "title": "TOP 20",
             "description": "TOP 20 FUN rádia"
         },
@@ -116,7 +119,7 @@ var RadioData = {
             "collection": "fun",
             "kind": "misc",
             "stream": "http://stream.funradio.sk:8000/dance128.mp3",
-            "playlist": null, // http://www.radia.sk/radia/fun-dance/playlist.html //
+            "playlist": "http://www.radia.sk/radia/fun-dance/playlist.html",
             "title": "Dance",
             "description": "Tanečná hudba FUN rádia"
         },
@@ -126,7 +129,7 @@ var RadioData = {
             "collection": "fun",
             "kind": "misc",
             "stream": "http://stream.funradio.sk:8000/new128.mp3",
-            "playlist": null, // http://www.radia.sk/radia/fun-novinky/playlist.html //
+            "playlist": "http://www.radia.sk/radia/fun-novinky/playlist.html",
             "title": "Novinky",
             "description": "Novinky / TOP 20 FUN rádia"
         },
@@ -136,7 +139,7 @@ var RadioData = {
             "collection": "fun",
             "kind": "misc",
             "stream": "http://stream.funradio.sk:8000/80-90-128.mp3",
-            "playlist": null, // http://www.radia.sk/radia/fun-80-90-roky/playlist.html //
+            "playlist": "http://www.radia.sk/radia/fun-80-90-roky/playlist.html",
             "title": "80 - 90. Roky",
             "description": "80 - 90. ROKY FUN rádia"
         },
@@ -146,7 +149,7 @@ var RadioData = {
             "collection": "fun",
             "kind": "misc",
             "stream": "http://stream.funradio.sk:8000/hiphop128.mp3",
-            "playlist": null, // http://www.radia.sk/radia/fun-hip-hop/playlist.html //
+            "playlist": "http://www.radia.sk/radia/fun-hip-hop/playlist.html",
             "title": "HIP HOP",
             "description": "HIP - HOP FUN rádia"
         },
@@ -156,7 +159,7 @@ var RadioData = {
             "collection": "fun",
             "kind": "misc",
             "stream": "http://stream.funradio.sk:8000/children128.mp3",
-            "playlist": null, // http://www.radia.sk/radia/fun-pre-deti/playlist.html //
+            "playlist": "http://www.radia.sk/radia/fun-pre-deti/playlist.html",
             "title": "Pre deti",
             "description": "Detský kanál FUN rádia"
         },
@@ -166,7 +169,7 @@ var RadioData = {
             "collection": "fun",
             "kind": "misc",
             "stream": "http://stream.funradio.sk:8000/rock128.mp3",
-            "playlist": null, // http://www.radia.sk/radia/fun-rock/playlist.html //
+            "playlist": "http://www.radia.sk/radia/fun-rock/playlist.html",
             "title": "ROCK",
             "description": "Rocková hudba FUN rádia"
         },
@@ -176,7 +179,7 @@ var RadioData = {
             "collection": "fun",
             "kind": "misc",
             "stream": "http://stream.funradio.sk:8000/cs128.mp3",
-            "playlist": null, // http://www.radia.sk/radia/fun-cz-sk/playlist.html //
+            "playlist": "http://www.radia.sk/radia/fun-cz-sk/playlist.html",
             "title": "CZ-SK",
             "description": "Česko - Slovenská hudba FUN rádia"
         },
@@ -186,7 +189,7 @@ var RadioData = {
             "collection": "misc",
             "kind": "misc",
             "stream": "http://217.67.31.66:8000/republika128.mp3",
-            "playlist": null, // http://www.radia.sk/radia/rockova-republika/playlist.html //
+            "playlist": "http://www.radia.sk/radia/rockova-republika/playlist.html",
             "title": "Rocková republika",
             "description": "Rádio Rocková republika prináša rock z rockov sedemdesiatych až po súčasnosť"
         },
@@ -196,7 +199,7 @@ var RadioData = {
             "collection": "misc",
             "kind": "misc",
             "stream": "http://stream.antenarock.sk/antena-hi.mp3",
-            "playlist": null, // http://www.radia.sk/radia/antena-rock/playlist.html //
+            "playlist": "http://www.radia.sk/radia/antena-rock/playlist.html",
             "title": "Anténa Rock",
             "description": "Rádio Anténa Rock je rádio pre všetkých milovníkov rockovej hudby!"
         },
@@ -325,7 +328,7 @@ var RadioData = {
         },
 
         "rsi": {
-            "relation": null,
+            "relation": "news",
             "collection": "rtvs",
             "kind": "rtvs",
             "stream": "RSI",
