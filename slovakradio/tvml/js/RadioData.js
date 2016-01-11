@@ -13,31 +13,56 @@ var RadioData = {
         "rtvs": {
             "title": "RTVS",
             "description": "Rádiá RTVS",
-            "items": ["fm", "slovensko", "junior", "devin", "klasika", "regina-ba", "regina-bb", "regina-ke", "litera", "rsi", "patria"]
+            "items": ["fm", "slovensko", "junior", "devin", "klasika", "regina-ba",
+                "regina-bb", "regina-ke", "litera", "rsi", "patria"]
         },
         "fun": {
             "title": "FUN Rádio",
             "description": "FUN Rádio Streams",
-            "items": ["fun-live", "fun-christmas", "fun-running", "fun-top20", "fun-dance", "fun-news", "fun-czsk", "fun-8090", "fun-hiphop", "fun-children", "fun-rock", "fun-love"]
+            "items": ["fun-live", "fun-christmas", "fun-running", "fun-top20",
+                "fun-dance", "fun-news", "fun-czsk", "fun-8090", "fun-hiphop",
+                "fun-children", "fun-rock", "fun-love"]
         },
         "misc": {
             "title": "Ostatné",
             "description": "Slovenské rádiá nezaradené inde",
-            "items": ["rockova-republika", "antena-rock"]
+            "items": ["rockova-republika", "antena-rock", "jemne", "expres"]
         },
     },
 
     "relations": {
-        "pop": ["fun-live", "fun-christmas", "fun-running", "fun-top20", "fun-dance", "fun-news", "fun-czsk", "fun-8090", "fun-hiphop", "fun-love"],
+        "pop": ["fun-live", "expres", "fun-christmas", "fun-running", "fun-top20",
+            "fun-dance", "fun-news", "fun-czsk", "fun-8090", "fun-hiphop"],
         "rock": ["fm", "rockova-republika", "antena-rock", "fun-rock"],
         "classic": ["devin", "klasika"],
         "news": ["slovensko", "regina-ba", "regina-bb", "regina-ke"],
-        "children": ["junior", "fun-children"]
+        "children": ["junior", "fun-children"],
+        "slow": ["jemne", "fun-love"]
     },
 
     "radios": {
-        "fun-love": {
+        "expres": {
             "relation": "pop",
+            "collection": "misc",
+            "kind": "misc",
+            "stream": "http://85.248.7.162:8000/128.mp3",
+            "playlist": null, // http://www.radia.sk/radia/expres/playlist.html //
+            "title": "Expres",
+            "description": "Baví nás baviť vás"
+        },
+
+        "jemne": {
+            "relation": "slow",
+            "collection": "misc",
+            "kind": "misc",
+            "stream": "http://stream.jemne.sk/jemne-hi.mp3",
+            "playlist": null, // http://www.radia.sk/radia/jemne/playlist.html //
+            "title": "Rádio Jemné",
+            "description": "Hráme skvelú hudbu, ktorá sa vám páči, pohodovú, príjemnú, pri ktorej môžete pracovať, oddychovať, venovať sa rodine alebo len tak príjemne oddychovať"
+        },
+
+        "fun-love": {
+            "relation": "slow",
             "collection": "fun",
             "kind": "misc",
             "stream": "http://stream.funradio.sk:8000/slow128.mp3",
