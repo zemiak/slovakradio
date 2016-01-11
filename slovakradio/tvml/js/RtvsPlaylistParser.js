@@ -21,9 +21,9 @@ var RtvsPlaylistParser = {
         var artists = [];
         var titles = [];
         for (line of data.split("\n")) {
-            RadioPlaylistParser.parseTime(line, times);
-            RadioPlaylistParser.parseArtist(line, artists);
-            RadioPlaylistParser.parseTitle(line, titles);
+            RtvsPlaylistParser.parseTime(line, times);
+            RtvsPlaylistParser.parseArtist(line, artists);
+            RtvsPlaylistParser.parseTitle(line, titles);
         }
 
         var playlist = [];

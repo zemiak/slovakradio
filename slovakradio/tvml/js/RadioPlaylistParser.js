@@ -1,6 +1,6 @@
 var RadioPlaylistParser = {
     getParsedPlaylist: function(response) {
-        if (response.contains("snippet-playlist")) {
+        if (response.indexOf("snippet-playlist") > -1) {
             return RtvsPlaylistParser.getParsedPlaylist(response);
         }
 
