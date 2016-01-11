@@ -15,7 +15,7 @@ var RadiaSKPlaylistParser = {
             playlist.push({time: timestamp, title: titles[i]});
             i++;
 
-            if (i > 4) {
+            if (i > 9) {
                 break;
             }
         }

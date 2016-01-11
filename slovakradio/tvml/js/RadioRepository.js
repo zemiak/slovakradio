@@ -55,5 +55,15 @@ var RadioRepository = {
     getPlaylistUrl: function(radioName) {
         var data = RadioRepository.getRadioData(radioName);
         return data.playlist;
+    },
+
+    getArtworkUrl: function(radioName) {
+        var data = RadioRepository.getRadioData(radioName);
+
+        if (data.artwork.indexOf("http") === -1) {
+            return Presenter.loader.imageUrl(data.artwork);
+        }
+
+        return data.artwork;
     }
 };

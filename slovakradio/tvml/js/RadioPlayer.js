@@ -33,7 +33,7 @@ var RadioPlayer = {
         RadioPlayer.player.playlist.pop(); // clear the playlist
 
         var mediaItem = new MediaItem("audio", RadioRepository.getStreamUrl(radioName));
-        mediaItem.artworkImageURL = Presenter.loader.imageUrl(radioName + ".png");
+        mediaItem.artworkImageURL = RadioRepository.getArtworkUrl(radioName);
 
         var data = RadioRepository.getRadioData(radioName);
         mediaItem.title = data.title;

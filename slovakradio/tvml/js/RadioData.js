@@ -168,7 +168,7 @@ var RadioData = {
         },
 
         "fun-rock": {
-            "relation": "pop",
+            "relation": "rock",
             "collection": "fun",
             "stream": "http://stream.funradio.sk:8000/rock128.mp3",
             "playlist": "http://www.radia.sk/radia/fun-rock/playlist.html",
@@ -258,7 +258,7 @@ var RadioData = {
                 + " Rádio_FM však nie je iba o hudbe, ale aj o témach, ktoré rezonujú, o ktorých treba hovoriť nahlas. Otvárame kauzy, prinášame zaujímavý pohľad"
                 + " na dianie okolo nás cez vlastnú publicistiku. Podporujeme novú slovenskú hudbu. Aj vďaka nej vznikli ocenenia Radio_Head Awards."
                 + " Skrátka, nechceme byť najpočúvanejšie, ale najpočúvateľnejšie rádio na Slovensku.",
-            "artwork": "dm.png",
+            "artwork": "fm.png",
         },
 
         "patria": {

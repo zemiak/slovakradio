@@ -37,7 +37,7 @@ var MainTemplate = {
 
     renderItem: function(key, data) {
         return `<lockup action="RadioPlayer.setupDetail('${key}')">
-        <img src="${Presenter.loader.imageUrl(key + ".png")}" width="${MainTemplate.width}" height="${MainTemplate.height}" />
+        <img src="${RadioRepository.getArtworkUrl(key)}" width="${MainTemplate.width}" height="${MainTemplate.height}" />
         <title>${data.title}</title>
         </lockup>`;
     }
