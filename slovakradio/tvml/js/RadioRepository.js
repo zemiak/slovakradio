@@ -49,21 +49,11 @@ var RadioRepository = {
 
     getStreamUrl: function(radioName) {
         var data = RadioRepository.getRadioData(radioName);
-
-        if ("rtvs" === data.kind) {
-            return RadioData.rtvs.streamUrl.replace("XXX", data.stream).replace("QQQ", Settings.isHighQuality() ? "256" : "128");
-        }
-
         return data.stream;
     },
 
     getPlaylistUrl: function(radioName) {
         var data = RadioRepository.getRadioData(radioName);
-
-        if ("rtvs" === data.kind && null !== data.id) {
-            return RadioData.rtvs.playlistUrl.replace("XXX", data.id);
-        }
-
         return data.playlist;
     }
 };

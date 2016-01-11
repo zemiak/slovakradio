@@ -45,7 +45,7 @@ var MainTemplate = {
 
 var Template = function() {
     var sections = MainTemplate.renderCollections();
-    var items = `<lockup action="Presenter.navigate('Settings')">
+    var items = `<lockup action="Presenter.navigate('Info')">
     <img src="resource://button-checkmark" width="${MainTemplate.width}" height="${MainTemplate.height}" />
     <title>Nastavenia</title>
     </lockup>

@@ -10,16 +10,15 @@ App.onLaunch = function(options) {
         resourceLoaderLocal.scriptUrl("Presenter.js"),
         resourceLoaderLocal.scriptUrl("RadioData.js"),
         resourceLoaderLocal.scriptUrl("RadioRepository.js"),
-        resourceLoaderLocal.scriptUrl("Settings.js"),
+        resourceLoaderLocal.scriptUrl("ApplicationStorage.js"),
         resourceLoaderLocal.scriptUrl("RadioPlayer.js"),
         resourceLoaderLocal.scriptUrl("RadioPlaylist.js"),
         resourceLoaderLocal.scriptUrl("RadioPlaylistParser.js")
     ];
-    
+
     evaluateScripts(javascriptFiles, function(success) {
         if(success) {
             Presenter.options = options;
-            Presenter.settings = Settings;
             Presenter.loader = resourceLoaderLocal;
             Presenter.navigate("Main");
         } else {
@@ -33,7 +32,7 @@ App.onLaunch = function(options) {
 var createAlert = function(title, description) {
     var alertString = `<?xml version="1.0" encoding="UTF-8" ?>
     <document>
-    <alertTemplate> 
+    <alertTemplate>
     <title>${title}</title>
     <description>${description}</description>
     </alertTemplate>
