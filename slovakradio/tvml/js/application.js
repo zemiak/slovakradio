@@ -1,3 +1,5 @@
+/* global App, ResourceLoaderLocal, JavascriptLogger, Presenter, navigationDocument */
+
 var resourceLoader;
 var resourceLoaderLocal;
 var LOG;
@@ -8,14 +10,15 @@ App.onLaunch = function(options) {
 
     var javascriptFiles = [
         resourceLoaderLocal.scriptUrl("Presenter.js"),
-        resourceLoaderLocal.scriptUrl("RadioData.js"),
-        resourceLoaderLocal.scriptUrl("RadioRepository.js"),
-        resourceLoaderLocal.scriptUrl("ApplicationStorage.js"),
-        resourceLoaderLocal.scriptUrl("RadioPlayer.js"),
-        resourceLoaderLocal.scriptUrl("RadioPlaylist.js"),
-        resourceLoaderLocal.scriptUrl("RadioPlaylistParser.js"),
-        resourceLoaderLocal.scriptUrl("RtvsPlaylistParser.js"),
-        resourceLoaderLocal.scriptUrl("RadiaSKPlaylistParser.js")
+        resourceLoaderLocal.scriptUrl("data/RadioData.js"),
+        resourceLoaderLocal.scriptUrl("service/RadioRepository.js"),
+        resourceLoaderLocal.scriptUrl("service/ApplicationStorage.js"),
+        resourceLoaderLocal.scriptUrl("service/RadioPlayer.js"),
+        resourceLoaderLocal.scriptUrl("playlist/RadioPlaylist.js"),
+        resourceLoaderLocal.scriptUrl("playlist/RadioPlaylistParser.js"),
+        resourceLoaderLocal.scriptUrl("playlist/RtvsPlaylistParser.js"),
+        resourceLoaderLocal.scriptUrl("playlist/RadiaSKPlaylistParser.js"),
+        resourceLoaderLocal.scriptUrl("lib/mustache.min.js")
     ];
 
     evaluateScripts(javascriptFiles, function(success) {
@@ -28,21 +31,18 @@ App.onLaunch = function(options) {
             navigationDocument.presentModal(errorDoc);
         }
     });
-}
+};
 
 
 var createAlert = function(title, description) {
-    var alertString = `<?xml version="1.0" encoding="UTF-8" ?>
-    <document>
-    <alertTemplate>
-    <title>${title}</title>
-    <description>${description}</description>
-    </alertTemplate>
-    </document>`
+    var alertString = '<?xml version="1.0" encoding="UTF-8" ?>'
+        + '<document><alertTemplate><title>' + title + '</title>'
+        + '<description>' + description + '</description>'
+        + '</alertTemplate></document>';
 
     var parser = new DOMParser();
 
     var alertDoc = parser.parseFromString(alertString, "application/xml");
 
-    return alertDoc
-}
+    return alertDoc;
+};

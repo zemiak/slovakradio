@@ -1,3 +1,5 @@
+/* global Presenter, RadioRepository, LOG */
+
 var RadioPlayer = {
     player: null,
     radioName: null,

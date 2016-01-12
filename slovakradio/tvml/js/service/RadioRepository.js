@@ -1,3 +1,5 @@
+/* global RadioData, Presenter */
+
 var RadioRepository = {
     getRadioData: function(radioName) {
         return RadioData.radios[radioName];
@@ -12,9 +14,9 @@ var RadioRepository = {
     },
 
     getRadios: function() {
-        var keys = []
+        var keys = [];
         var obj = RadioData.radios;
-        for (key in obj) {
+        for (var key in obj) {
             if (Object.prototype.hasOwnProperty.call(obj, key)) {
                 keys.push(key);
             }
@@ -24,9 +26,9 @@ var RadioRepository = {
     },
 
     getRelations: function() {
-        var keys = []
+        var keys = [];
         var obj = RadioData.relations;
-        for (key in obj) {
+        for (var key in obj) {
             if (Object.prototype.hasOwnProperty.call(obj, key)) {
                 keys.push(key);
             }
@@ -36,9 +38,9 @@ var RadioRepository = {
     },
 
     getCollections: function() {
-        var keys = []
+        var keys = [];
         var obj = RadioData.collections;
-        for (key in obj) {
+        for (var key in obj) {
             if (Object.prototype.hasOwnProperty.call(obj, key)) {
                 keys.push(key);
             }

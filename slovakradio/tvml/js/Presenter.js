@@ -1,3 +1,5 @@
+/* global navigationDocument, resourceLoaderLocal, Template */
+
 var Presenter = {
     makeDocument: function(resource) {
         if (!Presenter.parser) {
@@ -49,7 +51,7 @@ var Presenter = {
     },
 
     getDocumentName: function() {
-        var ele = Presenter.getDocumentDataElement()
+        var ele = Presenter.getDocumentDataElement();
         return ele.getAttribute("data-template");
     },
 
@@ -63,10 +65,10 @@ var Presenter = {
     },
 
     getRadioNameFromPage: function() {
-        if (Presenter.getDocumentName() == "Detail") {
+        if ("Detail" === Presenter.getDocumentName()) {
             return Presenter.getDocumentDataElement().getAttribute("data-radioName");
         }
 
         return null;
     }
-}
+};

@@ -1,10 +1,8 @@
+/* global LOG, RadioPlaylistParser */
+
 var RtvsPlaylistParser = {
     getParsedPlaylist: function(response) {
-        /*<ul class="stations nav">
-    <li class="list"><div class="inset">
-        <span class="programmeTime">11:00</span><span class="title">Autumnist</span><span class="song">Some Ground (analogrunner Remix)</span></div></li>
-    ...
-</ul>*/
+        // <span class="programmeTime">11:00</span><span class="title">Autumnist</span><span class="song">Some Ground (analogrunner Remix)</span></div></li>
         var data = JSON.parse(response);
         if (!data.snippets) {
             LOG.log("Error: playlist data changed. snippets missing");
@@ -20,7 +18,7 @@ var RtvsPlaylistParser = {
         var times = [];
         var artists = [];
         var titles = [];
-        for (line of data.split("\n")) {
+        for (var line in data.split("\n")) {
             RtvsPlaylistParser.parseTime(line, times);
             RtvsPlaylistParser.parseArtist(line, artists);
             RtvsPlaylistParser.parseTitle(line, titles);
@@ -28,7 +26,7 @@ var RtvsPlaylistParser = {
 
         var playlist = [];
         var i = 0;
-        for (timestamp of times) {
+        for (var timestamp in times) {
             playlist.push({time: timestamp, title: artists[i] + ": " + titles[i]});
             i++;
         }

@@ -1,3 +1,5 @@
+/* global RtvsPlaylistParser, RadiaSKPlaylistParser */
+
 var RadioPlaylistParser = {
     getParsedPlaylist: function(response) {
         if (response.indexOf("snippet-playlist") > -1) {

@@ -1,8 +1,10 @@
+/* global RadioPlaylistParser */
+
 var RadiaSKPlaylistParser = {
     getParsedPlaylist: function(response) {
         var times = [];
         var titles = [];
-        for (line of response.split("\n")) {
+        for (var line in response.split("\n")) {
             line = line.trim();
 
             RadiaSKPlaylistParser.parseTime(line, times);
@@ -11,7 +13,7 @@ var RadiaSKPlaylistParser = {
 
         var playlist = [];
         var i = 0;
-        for (timestamp of times) {
+        for (var timestamp in times) {
             playlist.push({time: timestamp, title: titles[i]});
             i++;
 
@@ -26,7 +28,6 @@ var RadiaSKPlaylistParser = {
     parseTime: function(line, times) {
         // <td class="cas">dnes<br /><b>07:48</b></td>
         var SEARCH = '<td class="cas">';
-        var TIME_BREAK = "<br /><b>";
         var pos = line.indexOf(SEARCH);
         if (-1 === pos) {
             return;
@@ -50,5 +51,5 @@ var RadiaSKPlaylistParser = {
         title = title.replace("</b>", "").replace("<br />", ": ");
 
         titles.push(RadioPlaylistParser.encode(title));
-    },
+    }
 };

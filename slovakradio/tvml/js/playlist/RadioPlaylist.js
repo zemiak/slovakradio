@@ -1,3 +1,5 @@
+/* global Presenter, RadioPlayer, RadioRepository, LOG, RadioPlaylistParser */
+
 var RadioPlaylist = {
     playlists: {},
 
@@ -10,7 +12,7 @@ var RadioPlaylist = {
         var template = Presenter.loader.loadBundleResource("PlaylistItem");
         var items = "";
         var i = 0;
-        for (item of playlist) {
+        for (var item in playlist) {
             i++;
             items += template.replace("OOO", i).replace("TTT", item.title).replace("DDD", item.time);
         }
@@ -30,8 +32,8 @@ var RadioPlaylist = {
         LOG.log("RadioPlaylist.refreshPlaylist: Refreshing playlist for " + radioName);
         var request = new XMLHttpRequest();
         request.responseType = "text";
-        request.addEventListener("load", function(){RadioPlaylist.playlistLoaded(request)});
-        request.data_radioName = radioName
+        request.addEventListener("load", function(){RadioPlaylist.playlistLoaded(request);});
+        request.data_radioName = radioName;
         request.open("GET", RadioRepository.getPlaylistUrl(radioName));
         request.send();
     },
@@ -47,7 +49,7 @@ var RadioPlaylist = {
             return;
         }
 
-        setTimeout(function(){RadioPlaylist.refreshPlaylist(radioName)}, 60000); // refresh the radio playlist again after 60 seconds //
+        setTimeout(function(){RadioPlaylist.refreshPlaylist(radioName);}, 60000); // refresh the radio playlist again after 60 seconds //
 
         var doc = Presenter.getCurrentDocument();
         var ele = doc.getElementById("playlist");

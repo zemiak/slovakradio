@@ -33,7 +33,7 @@ var RadioData = {
             "title": "Ostatné",
             "description": "Slovenské rádiá nezaradené inde",
             "items": ["rockova-republika", "antena-rock", "jemne", "expres"]
-        },
+        }
     },
 
     "relations": {
@@ -54,7 +54,7 @@ var RadioData = {
             "playlist": "http://www.radia.sk/radia/expres/playlist.html",
             "title": "Expres",
             "description": "Baví nás baviť vás",
-            "artwork": "expres.png",
+            "artwork": "expres.png"
         },
 
         "jemne": {
@@ -64,7 +64,7 @@ var RadioData = {
             "playlist": "http://www.radia.sk/radia/jemne/playlist.html",
             "title": "Rádio Jemné",
             "description": "Hráme skvelú hudbu, ktorá sa vám páči, pohodovú, príjemnú, pri ktorej môžete pracovať, oddychovať, venovať sa rodine alebo len tak príjemne oddychovať",
-            "artwork": "jemne.png",
+            "artwork": "jemne.png"
         },
 
         "fun-love": {
@@ -74,7 +74,7 @@ var RadioData = {
             "playlist": "http://www.radia.sk/radia/fun-love-songs/playlist.html",
             "title": "Love Songs",
             "description": "Pesničky o láske",
-            "artwork": "fun-love.png",
+            "artwork": "fun-love.png"
         },
 
         "fun-live": {
@@ -84,7 +84,7 @@ var RadioData = {
             "playlist": "http://www.radia.sk/radia/fun/playlist.html",
             "title": "Live",
             "description": "Živé vysielanie FUN rádia",
-            "artwork": "fun-live.png",
+            "artwork": "fun-live.png"
         },
 
         "fun-christmas": {
@@ -94,7 +94,7 @@ var RadioData = {
             "playlist": null,
             "title": "Christmas",
             "description": "Vianočná hudba FUN rádia",
-            "artwork": "fun-christmas.png",
+            "artwork": "fun-christmas.png"
         },
 
         "fun-running": {
@@ -104,7 +104,7 @@ var RadioData = {
             "playlist": "http://www.radia.sk/radia/fun-running/playlist.html",
             "title": "Running",
             "description": "Bežecká hudba FUN rádia",
-            "artwork": "fun-running.png",
+            "artwork": "fun-running.png"
         },
 
         "fun-top20": {
@@ -114,7 +114,7 @@ var RadioData = {
             "playlist": "http://www.radia.sk/radia/fun-top-20/playlist.html",
             "title": "TOP 20",
             "description": "TOP 20 FUN rádia",
-            "artwork": "fun-top20.png",
+            "artwork": "fun-top20.png"
         },
 
         "fun-dance": {
@@ -124,7 +124,7 @@ var RadioData = {
             "playlist": "http://www.radia.sk/radia/fun-dance/playlist.html",
             "title": "Dance",
             "description": "Tanečná hudba FUN rádia",
-            "artwork": "fun-dance.png",
+            "artwork": "fun-dance.png"
         },
 
         "fun-news": {
@@ -134,7 +134,7 @@ var RadioData = {
             "playlist": "http://www.radia.sk/radia/fun-novinky/playlist.html",
             "title": "Novinky",
             "description": "Novinky / TOP 20 FUN rádia",
-            "artwork": "fun-news.png",
+            "artwork": "fun-news.png"
         },
 
         "fun-8090": {
@@ -144,7 +144,7 @@ var RadioData = {
             "playlist": "http://www.radia.sk/radia/fun-80-90-roky/playlist.html",
             "title": "80 - 90. Roky",
             "description": "80 - 90. ROKY FUN rádia",
-            "artwork": "fun-8090.png",
+            "artwork": "fun-8090.png"
         },
 
         "fun-hiphop": {
@@ -154,7 +154,7 @@ var RadioData = {
             "playlist": "http://www.radia.sk/radia/fun-hip-hop/playlist.html",
             "title": "HIP HOP",
             "description": "HIP - HOP FUN rádia",
-            "artwork": "fun-hiphop.png",
+            "artwork": "fun-hiphop.png"
         },
 
         "fun-children": {
@@ -164,7 +164,7 @@ var RadioData = {
             "playlist": "http://www.radia.sk/radia/fun-pre-deti/playlist.html",
             "title": "Pre deti",
             "description": "Detský kanál FUN rádia",
-            "artwork": "fun-children.png",
+            "artwork": "fun-children.png"
         },
 
         "fun-rock": {
@@ -174,7 +174,7 @@ var RadioData = {
             "playlist": "http://www.radia.sk/radia/fun-rock/playlist.html",
             "title": "ROCK",
             "description": "Rocková hudba FUN rádia",
-            "artwork": "fun-rock.png",
+            "artwork": "fun-rock.png"
         },
 
         "fun-czsk": {
@@ -184,7 +184,7 @@ var RadioData = {
             "playlist": "http://www.radia.sk/radia/fun-cz-sk/playlist.html",
             "title": "CZ-SK",
             "description": "Česko - Slovenská hudba FUN rádia",
-            "artwork": "fun-czsk.png",
+            "artwork": "fun-czsk.png"
         },
 
         "rockova-republika": {
@@ -194,7 +194,7 @@ var RadioData = {
             "playlist": "http://www.radia.sk/radia/rockova-republika/playlist.html",
             "title": "Rocková republika",
             "description": "Rádio Rocková republika prináša rock z rockov sedemdesiatych až po súčasnosť",
-            "artwork": "rockova-republika.png",
+            "artwork": "rockova-republika.png"
         },
 
         "antena-rock": {
@@ -204,7 +204,7 @@ var RadioData = {
             "playlist": "http://www.radia.sk/radia/antena-rock/playlist.html",
             "title": "Anténa Rock",
             "description": "Rádio Anténa Rock je rádio pre všetkých milovníkov rockovej hudby!",
-            "artwork": "antena-rock.png",
+            "artwork": "antena-rock.png"
         },
 
         "slovensko": {
@@ -218,7 +218,7 @@ var RadioData = {
                 + " Hrá príjemnú hudbu a ponúka relax. Rádio Slovensko je v neustálom kontakte so svojimi poslucháčmi prostredníctvom interaktívneho vysielania a diskusných"
                 + " relácií, v ktorých prezentuje široké spektrum názorov. Významnú pozornosť venuje dianiu v oblasti kultúry, vo večerných hodinách nájdete v programe"
                 + " čítanie na pokračovanie, rozhlasovú hru, hudobnú a náboženskú publicistiku. Rádio Slovensko – vaše rádio, vaše Slovensko.",
-            "artwork": "slovensko.png",
+            "artwork": "slovensko.png"
         },
 
         "regina-ba": {
@@ -231,7 +231,7 @@ var RadioData = {
                 + " Je to Rádiobudík (5:05 – 8:00 hod.), Magazín Rádia Regina (9:05 – 12:00 hod.) a Mozaika regiónu (14:05 – 16.00 hod.). V reláciách si poslucháči"
                 + " nájdu jednak informácie o dianí v obciach a mestách Bratislavského, Trnavského, Nitrianskeho a Trenčianskeho kraja, ale vo vysielaní sa striedajú"
                 + " aj príspevky občianskej publicistiky, poradenstvo, vzdelávanie i osveta.",
-            "artwork": "regina-ba.png",
+            "artwork": "regina-ba.png"
         },
 
         "devin": {
@@ -242,7 +242,7 @@ var RadioData = {
             "title": "Rádio Devín",
             "description": "Rádio Devín, programová služba dávajúca priestor umeleckým, literárno-dramatickým, umeno-vedným rozhlasovým útvarom,"
                 + " ako aj hudobným žánrom nekomerčného typu. Klasická hudba, jazz, alternatíva, art rock, folk, šansón, experimentálna hudba...",
-            "artwork": "devin.png",
+            "artwork": "devin.png"
         },
 
         "fm": {
@@ -258,7 +258,7 @@ var RadioData = {
                 + " Rádio_FM však nie je iba o hudbe, ale aj o témach, ktoré rezonujú, o ktorých treba hovoriť nahlas. Otvárame kauzy, prinášame zaujímavý pohľad"
                 + " na dianie okolo nás cez vlastnú publicistiku. Podporujeme novú slovenskú hudbu. Aj vďaka nej vznikli ocenenia Radio_Head Awards."
                 + " Skrátka, nechceme byť najpočúvanejšie, ale najpočúvateľnejšie rádio na Slovensku.",
-            "artwork": "fm.png",
+            "artwork": "fm.png"
         },
 
         "patria": {
@@ -270,7 +270,7 @@ var RadioData = {
             "description": "Közép-Európában a húszas évek derekán kezdődött a rendszeres rádiózás. Szlovákia esetében a gyökerek egészen 1926-ig nyúlnak vissza."
                 + " Az adás Pozsonyban már az első Csehszlovák Köztársaság idején 1926 októberében megindult. Néhány hónappal később 1927 áprilisától már Kassáról"
                 + " is sugározni kezdett a rádió.",
-            "artwork": "patria.png",
+            "artwork": "patria.png"
         },
 
         "klasika": {
@@ -281,7 +281,7 @@ var RadioData = {
             "title": "Rádio Klasika",
             "description": "Rádio Klasika, siedmy okruh Slovenského rozhlasu, je digitálna programová služba, venovaná klasickej hudbe všetkých období a foriem,"
                 + " od renesancie cez romantizmus až po hudobnú modernu, od klavírnych miniatúr cez komorné skladby až po symfónie a opery.",
-            "artwork": "klasika.png",
+            "artwork": "klasika.png"
         },
 
         "litera": {
@@ -294,7 +294,7 @@ var RadioData = {
                 + " Je jediným projektom v slovenskom rádiovom priestore, ktorý ponúka 24-hodinové slovné, umelecké a literárno-dramatické programy. Vysiela poéziu,"
                 + " prózu, drámu a publicistiku - programy zamerané na intelektuálnejších poslucháčov od 15 rokov, ktorí majú radi hovorené slovo."
                 + " Svoje vysielanie spustilo 15. júla 2009.",
-            "artwork": "litera.png",
+            "artwork": "litera.png"
         },
 
         "junior": {
@@ -304,7 +304,7 @@ var RadioData = {
             "playlist": "http://slovensko.rtvs.sk/json/radio_playlist.json?channel=3",
             "title": "Rádio Junior",
             "description": "Rádio Junior - Slovenský rozhlas 9 je digitálna programová služba Slovenského rozhlasu adresovaná najmladším poslucháčom.",
-            "artwork": "junior.png",
+            "artwork": "junior.png"
         },
 
         "regina-bb": {
@@ -316,7 +316,7 @@ var RadioData = {
             "description": "Dňa 5. 9. 1957 sa po prvýkrát samostatnou spravodajskou a publicistickou  reláciou prihlásilo v rozhlasovom éteri banskobystrické štúdio"
                 + " vtedajšieho Československého rozhlasu. Rozhlasové vysielanie z Banskej Bystrice malo v tom čase už za sebou krátku, ale dôstojnú kapitolu"
                 + " v podobe Slobodného slovenského vysielača počas SNP, no po skončení 2. svetovej vojny ho neobnovili.",
-            "artwork": "regina-bb.png",
+            "artwork": "regina-bb.png"
         },
 
         "regina-ke": {
@@ -327,7 +327,7 @@ var RadioData = {
             "title": "Rádio Regina Košice",
             "description": "Rádio Regina - štúdio Košice zabezpečuje autonómne regionálne vysielanie na východnom Slovensku a participuje na príprave"
                 + " spoločného vysielania Rádia Regina.",
-            "artwork": "regina-ke.png",
+            "artwork": "regina-ke.png"
         },
 
         "rsi": {
@@ -338,7 +338,7 @@ var RadioData = {
             "title": "Rádio Slovensko International",
             "description": "We are RSI - Radio Slovakia International. We have been broadcasting since 1993, bringing you the juiciest info about our country in the heart"
                 + " of Europe. We broadcast half hour shows 7 days a week, in English, French, German, Russian, Spanish and Slovak, via the internet and satellite.",
-            "artwork": "rsi.png",
-        },
+            "artwork": "rsi.png"
+        }
     }
 };
