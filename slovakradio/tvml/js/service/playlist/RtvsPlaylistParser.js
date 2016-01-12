@@ -18,17 +18,18 @@ var RtvsPlaylistParser = {
         var times = [];
         var artists = [];
         var titles = [];
-        for (var line in data.split("\n")) {
+
+        var lines = data.split("\n");
+        for (var i in lines) {
+            line = lines[i].trim();
             RtvsPlaylistParser.parseTime(line, times);
             RtvsPlaylistParser.parseArtist(line, artists);
             RtvsPlaylistParser.parseTitle(line, titles);
         }
 
         var playlist = [];
-        var i = 0;
-        for (var timestamp in times) {
-            playlist.push({time: timestamp, title: artists[i] + ": " + titles[i]});
-            i++;
+        for (var i in times) {
+            playlist.push({time: times[i], title: artists[i] + ": " + titles[i]});
         }
 
         return playlist;

@@ -1,72 +1,38 @@
-var DetailTemplate = {
-    width: 293,
-    height: 161,
+/* global RadioRepository, resourceLoaderLocal, Mustache */
 
-    renderRelated: function(radioName, data) {
-        if (null == data.relation) {
-            return "";
-        }
+var Template = function() {
+    var width = 293;
+    var height = 161;
 
-        var items = "", relData, item;
-        for (key of RadioRepository.getRelationData(data.relation)) {
+    var radioName = RadioPlayer.getRadioName();
+    var data = RadioRepository.getRadioData(radioName);
+    var template = resourceLoaderLocal.loadBundleResource("templates/Detail.mustache");
+
+
+    var templateData = {
+        "key": radioName,
+        "playlist": RadioPlaylist.getPlaylist(radioName),
+        "title": data.title,
+        "description": data.description,
+        "artwork": RadioRepository.getArtworkUrl(radioName),
+        "collection": RadioRepository.getCollectionData(data.collection)["title"]
+    };
+
+    var related = [];
+    if (null !== data.relation) {
+        var relationData = RadioRepository.getRelationData(data.relation);
+        for (var i in relationData) {
+            var key = relationData[i];
             if (key === radioName) {
                 continue;
             }
 
-            relData = RadioRepository.getRadioData(key);
-            item = `<lockup action="RadioPlayer.setupDetail('${key}')">
-                <img src="${RadioRepository.getArtworkUrl(key)}" width="${DetailTemplate.width}" height="${DetailTemplate.height}" />
-                <title>${relData.title}</title></lockup>`;
-            items += item;
+            var relData = RadioRepository.getRadioData(key);
+            related.push({"key": key, "artwork": RadioRepository.getArtworkUrl(key), "width": width, "height": height, "title": relData.title});
         }
-
-        return items;
     }
-};
-
-var Template = function() {
-    var radioName = RadioPlayer.getRadioName();
-    var data = RadioRepository.getRadioData(radioName); // title, description
-    var playListUrl = RadioRepository.getPlaylistUrl(radioName);
-    var artworkImageURL = RadioRepository.getArtworkUrl(radioName);
-    var items = RadioPlaylist.getRenderedPlaylist(radioName);
-    var related = DetailTemplate.renderRelated(radioName, data);
+    templateData.related = related;
 
     RadioPlaylist.refreshPlaylist(radioName); // refresh the radio playlist after 1 minute //
-
-    var xml = `<document>
-   <productTemplate id="template-data" data-radioName="${radioName}" data-template="Detail">
-      <banner>
-        <infoList>
-          <info id="playlist">
-            <header><title>Playlist</title></header>
-            ${items}
-          </info>
-        </infoList>
-        <stack>
-            <title>${data.title}</title>
-            <description allowsZooming="true" moreLabel="viac">${data.description}</description>
-            <row>
-                <buttonLockup action="RadioPlayer.play()">
-                    <badge src="resource://button-play"/>
-                    <title>Štart</title>
-                </buttonLockup>
-
-                <buttonLockup action="RadioPlayer.stop()">
-                    <badge src="resource://button-more"/>
-                    <title>Stop</title>
-                </buttonLockup>
-            </row>
-        </stack>
-        <heroImg src="${artworkImageURL}" />
-      </banner>
-      <shelf>
-        <header><title>Podobné rádiá</title></header>
-        <section>
-            ${related}
-        </section>
-      </shelf>
-   </productTemplate>
-</document>`;
-    return xml;
+    return Mustache.render(template, templateData);
 }

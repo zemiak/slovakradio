@@ -1,0 +1,30 @@
+<document>
+    <catalogTemplate mode="showcase" id="template-data" data-template="Main">
+        <banner>
+            <title>:RÁDIÁ SK</title>
+        </banner>
+
+        <list>
+            <section>
+                {{#collections}}
+                    <listItemLockup>
+                        <title>{{title}}</title>
+                        <decorationLabel>{{itemsLength}}</decorationLabel>
+                        <relatedContent>
+                            <grid>
+                                <section>
+                                    {{#items}}
+                                        <lockup action="{{action}}">
+                                            <img src="{{artwork}}" width="{{width}}" height="{{height}}" />
+                                            <title>{{title}}</title>
+                                        </lockup>
+                                    {{/items}}
+                                </section>
+                            </grid>
+                        </relatedContent>
+                    </listItemLockup>
+                {{/collections}}
+            </section>
+        </list>
+    </catalogTemplate>
+</document>

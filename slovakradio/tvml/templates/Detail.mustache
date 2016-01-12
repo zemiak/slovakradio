@@ -1,0 +1,56 @@
+<document>
+   <productTemplate id="template-data" data-radioName="{{key}}" data-template="Detail">
+      <banner>
+        <infoList>
+          <info>
+            <header><title>Skupina</title></header>
+            <text>{{collection}}</text>
+          </info>
+        </infoList>
+        <stack>
+            <title>{{title}}</title>
+            <row>
+                <text>Playlist nájdete dolu</text>
+            </row>
+
+            <description allowsZooming="true" moreLabel="viac">{{description}}</description>
+            <row>
+                <buttonLockup action="RadioPlayer.play()">
+                    <badge src="resource://button-play"/>
+                    <title>Štart</title>
+                </buttonLockup>
+
+                <buttonLockup action="RadioPlayer.stop()">
+                    <badge src="resource://button-more"/>
+                    <title>Stop</title>
+                </buttonLockup>
+            </row>
+        </stack>
+        <heroImg src="{{artwork}}" />
+      </banner>
+
+      <shelf>
+        <header><title>Podobné rádiá</title></header>
+        <section>
+            {{#related}}
+                <lockup action="RadioPlayer.setupDetail('{{key}}')">
+                    <img src="{{artwork}}" width="{{width}}" height="{{height}}" />
+                    <title>{{title}}</title>
+                </lockup>
+            {{/related}}
+        </section>
+      </shelf>
+
+      <shelf>
+          <header><title>Playlist</title></header>
+          <section id="playlist">
+              {{#playlist}}
+                  <ratingCard>
+                    <title>{{time}}</title>
+                    <description>{{title}}</description>
+                  </ratingCard>
+              {{/playlist}}
+          </section>
+      </shelf>
+   </productTemplate>
+</document>

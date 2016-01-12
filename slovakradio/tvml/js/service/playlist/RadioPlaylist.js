@@ -3,21 +3,22 @@
 var RadioPlaylist = {
     playlists: {},
 
-    getRenderedPlaylist: function(radioName) {
+    getPlaylist: function(radioName) {
         var playlist = RadioPlaylist.playlists[radioName];
         if (!playlist) {
-            return ""; // not loaded yet //
+            LOG.log("getPlaylist() for " + radioName + " -- empty, not loaded yet");
+            return []; // not loaded yet //
         }
 
-        var template = Presenter.loader.loadBundleResource("PlaylistItem");
-        var items = "";
-        var i = 0;
-        for (var item in playlist) {
-            i++;
-            items += template.replace("OOO", i).replace("TTT", item.title).replace("DDD", item.time);
-        }
+        LOG.log("getPlaylist() for " + radioName + " -- " + playlist.length + " items");
+        return playlist;
+    },
 
-        return items;
+    getRenderedPlaylist: function(radioName) {
+        var template = Presenter.loader.loadBundleResource("templates/Playlist.mustache");
+        var text = Mustache.render(template, {playlist: RadioPlaylist.getPlaylist(radioName)});
+        LOG.log("Rendered playlist for " + radioName + " as '" + text + "'");
+        return text;
     },
 
     refreshPlaylist: function(radioName) {
@@ -43,6 +44,7 @@ var RadioPlaylist = {
         var response = that.responseText;
 
         RadioPlaylist.playlists[radioName] = RadioPlaylistParser.getParsedPlaylist(response);
+        LOG.log("Playlist parsed for " + radioName + ": " + RadioPlaylist.playlists[radioName].length + " items");
 
         if (Presenter.getRadioNameFromPage() !== radioName) {
             LOG.log("RadioPlaylist.playlistLoaded: not replaced the playlist on page, because we are on " + Presenter.getRadioNameFromPage());
@@ -53,6 +55,7 @@ var RadioPlaylist = {
 
         var doc = Presenter.getCurrentDocument();
         var ele = doc.getElementById("playlist");
+        LOG.log("Playlist for " + radioName + " goes into " + ele);
         ele.innerHTML = RadioPlaylist.getRenderedPlaylist(radioName);
         LOG.log("RadioPlaylist.playlistLoaded: Replaced playlist content for " + radioName + ". Another refresh after 60s. " + ele.innerHTML);
     }

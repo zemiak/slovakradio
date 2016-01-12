@@ -1,78 +1,37 @@
 /* global Presenter, resourceLoaderLocal, Mustache */
 
-var MainTemplate = {
-    width: 293,
-    height: 161,
-
-    renderCollections: function() {
-        var text = "";
-        var collections = RadioRepository.getCollections();
-        for (var collection in collections) {
-            if ("favorites" === collection) {
-                // render favorites //
-            } else {
-                text += MainTemplate.renderCollection(collection);
-            }
-        }
-
-        return text;
-    },
-
-    renderCollection: function(name) {
-        var data = RadioRepository.getCollectionData(name);
-        var items = MainTemplate.renderItems(data);
-
-        return `<listItemLockup><title>${data.title}</title><decorationLabel>${data.items.length}</decorationLabel>
-            <relatedContent><grid><section>${items}</section></grid></relatedContent></listItemLockup>`;
-    },
-
-    renderItems: function(data) {
-        var text = "";
-        var items = data.items;
-        for (key of items) {
-            var data = RadioRepository.getRadioData(key);
-            text += MainTemplate.renderItem(key, data);
-        }
-
-        return text;
-    },
-
-    renderItem: function(key, data) {
-        return `<lockup action="RadioPlayer.setupDetail('${key}')">
-        <img src="${RadioRepository.getArtworkUrl(key)}" width="${MainTemplate.width}" height="${MainTemplate.height}" />
-        <title>${data.title}</title>
-        </lockup>`;
-    }
-};
-
 var Template = function() {
-    var data = {version: Presenter.options.Version};
-    var template = resourceLoaderLocal.loadBundleResource("templates/Info.mustache");
+    var width = 293;
+    var height = 161;
+
+    var data = {collections: []};
+    var collections = RadioRepository.getCollections();
+    for (var i in collections) {
+        var name = collections[i];
+        if ("favorites" === name) {
+            // render favorites //
+        } else {
+            var items = [];
+            var collectionData = RadioRepository.getCollectionData(name);
+            for (var j in collectionData.items) {
+                var key = collectionData.items[j];
+                var radioData = RadioRepository.getRadioData(key);
+                items.push({"action": "RadioPlayer.setupDetail('" + key + "')",
+                           "title": radioData.title, "width": width, "height": height,
+                           "artwork": RadioRepository.getArtworkUrl(key)});
+            }
+            data.collections.push({"title": collectionData.title, "itemsLength": items.length, "items": items});
+        }
+    }
+
+    var items = [
+        {"action": "Presenter.navigate('Info')", "title": "Informácie",
+                 "width": width, "height": height, "artwork": "resource://button-checkmark"},
+        {"action": "RadioPlayer.stop()", "title": "Stop",
+                 "width": width, "height": height, "artwork": "resource://button-more"}
+    ];
+    data.collections.push({"title": "Akcie", "itemsLength": items.length, "items": items});
+
+    var template = resourceLoaderLocal.loadBundleResource("templates/Main.mustache");
     return Mustache.render(template, data);
-
-    var sections = MainTemplate.renderCollections();
-    var items = `<lockup action="Presenter.navigate('Info')">
-    <img src="resource://button-checkmark" width="${MainTemplate.width}" height="${MainTemplate.height}" />
-    <title>Nastavenia</title>
-    </lockup>
-
-    <lockup action="RadioPlayer.stop()">
-    <img src="resource://button-more" width="${MainTemplate.width}" height="${MainTemplate.height}" />
-    <title>Stop</title>
-    </lockup>`;
-    sections += `<listItemLockup><title>Nastavenia</title><decorationLabel>2</decorationLabel>
-    <relatedContent><grid><section>${items}</section></grid></relatedContent></listItemLockup>`;
-
-    var html = `<document>
-<catalogTemplate mode="showcase" id="template-data" data-template="Main">
-    <banner>
-        <title>:RÁDIÁ SK</title>
-    </banner>
-
-    <list><section>
-    ${sections}
-    </section></list>
-</catalogTemplate></document>
-`;
-    return html;
 }

@@ -9,15 +9,15 @@ App.onLaunch = function(options) {
     LOG = JavascriptLogger.create();
 
     var javascriptFiles = [
-        resourceLoaderLocal.scriptUrl("Presenter.js"),
+        resourceLoaderLocal.scriptUrl("service/Presenter.js"),
         resourceLoaderLocal.scriptUrl("data/RadioData.js"),
         resourceLoaderLocal.scriptUrl("service/RadioRepository.js"),
         resourceLoaderLocal.scriptUrl("service/ApplicationStorage.js"),
         resourceLoaderLocal.scriptUrl("service/RadioPlayer.js"),
-        resourceLoaderLocal.scriptUrl("playlist/RadioPlaylist.js"),
-        resourceLoaderLocal.scriptUrl("playlist/RadioPlaylistParser.js"),
-        resourceLoaderLocal.scriptUrl("playlist/RtvsPlaylistParser.js"),
-        resourceLoaderLocal.scriptUrl("playlist/RadiaSKPlaylistParser.js"),
+        resourceLoaderLocal.scriptUrl("service/playlist/RadioPlaylist.js"),
+        resourceLoaderLocal.scriptUrl("service/playlist/RadioPlaylistParser.js"),
+        resourceLoaderLocal.scriptUrl("service/playlist/RtvsPlaylistParser.js"),
+        resourceLoaderLocal.scriptUrl("service/playlist/RadiaSKPlaylistParser.js"),
         resourceLoaderLocal.scriptUrl("lib/mustache.min.js")
     ];
 

@@ -4,18 +4,17 @@ var RadiaSKPlaylistParser = {
     getParsedPlaylist: function(response) {
         var times = [];
         var titles = [];
-        for (var line in response.split("\n")) {
-            line = line.trim();
+        var lines = response.split("\n");
+        for (var i in lines) {
+            line = lines[i].trim();
 
             RadiaSKPlaylistParser.parseTime(line, times);
             RadiaSKPlaylistParser.parseTitle(line, titles);
         }
 
         var playlist = [];
-        var i = 0;
-        for (var timestamp in times) {
-            playlist.push({time: timestamp, title: titles[i]});
-            i++;
+        for (var i in times) {
+            playlist.push({time: times[i], title: titles[i]});
 
             if (i > 9) {
                 break;
