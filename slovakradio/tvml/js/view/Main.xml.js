@@ -1,3 +1,5 @@
+/* global Presenter, resourceLoaderLocal, Mustache */
+
 var MainTemplate = {
     width: 293,
     height: 161,
@@ -5,7 +7,7 @@ var MainTemplate = {
     renderCollections: function() {
         var text = "";
         var collections = RadioRepository.getCollections();
-        for (collection of collections) {
+        for (var collection in collections) {
             if ("favorites" === collection) {
                 // render favorites //
             } else {
@@ -44,6 +46,10 @@ var MainTemplate = {
 };
 
 var Template = function() {
+    var data = {version: Presenter.options.Version};
+    var template = resourceLoaderLocal.loadBundleResource("templates/Info.mustache");
+    return Mustache.render(template, data);
+
     var sections = MainTemplate.renderCollections();
     var items = `<lockup action="Presenter.navigate('Info')">
     <img src="resource://button-checkmark" width="${MainTemplate.width}" height="${MainTemplate.height}" />

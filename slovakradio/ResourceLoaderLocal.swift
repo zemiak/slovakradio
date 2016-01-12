@@ -16,7 +16,6 @@ import JavaScriptCore
 @objc protocol ResourceLoaderLocalExport : JSExport {
     func loadBundleResource(name: String) -> String
     func imageUrl(name: String) -> String
-    func templateUrl(name: String) -> String
     func scriptUrl(name: String) -> String
     static func create() -> ResourceLoaderLocalExport
 }
@@ -25,7 +24,7 @@ import JavaScriptCore
 @objc class ResourceLoaderLocal: NSObject, ResourceLoaderLocalExport {
 
     func loadBundleResource(name: String) -> String {
-        let path = NSBundle.mainBundle().pathForResource("tvml/templates/" + name + ".xml.js", ofType: nil)
+        let path = NSBundle.mainBundle().pathForResource("tvml/" + name, ofType: nil)
         let fileContent: String
         do {
             fileContent = try String(contentsOfFile: path!, encoding: NSUTF8StringEncoding)
@@ -38,10 +37,6 @@ import JavaScriptCore
 
     func imageUrl(name: String) -> String {
         return getResourceUrl(name, folder: "images")
-    }
-
-    func templateUrl(name: String) -> String {
-        return getResourceUrl(name, folder: "templates")
     }
 
     func scriptUrl(name: String) -> String {

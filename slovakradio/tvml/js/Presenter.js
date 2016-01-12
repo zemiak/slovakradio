@@ -31,7 +31,7 @@ var Presenter = {
     },
 
     getDocumentFromTemplate: function(template) {
-        var template = resourceLoaderLocal.loadBundleResource(template);
+        var template = resourceLoaderLocal.loadBundleResource("js/view/" + template + ".xml.js");
         eval(template);
         var res = Template.call(this);
         var doc = Presenter.makeDocument(res);
