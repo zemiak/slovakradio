@@ -15,7 +15,8 @@ var Template = function() {
         "title": data.title,
         "description": data.description,
         "artwork": RadioRepository.getArtworkUrl(radioName),
-        "collection": RadioRepository.getCollectionData(data.collection)["title"]
+        "collection": RadioRepository.getCollectionData(data.collection)["title"],
+        "isFavorite": Favorites.isFavorite(radioName)
     };
 
     var related = [];
@@ -28,7 +29,8 @@ var Template = function() {
             }
 
             var relData = RadioRepository.getRadioData(key);
-            related.push({"key": key, "artwork": RadioRepository.getArtworkUrl(key), "width": width, "height": height, "title": relData.title});
+            related.push({"key": key, "artwork": RadioRepository.getArtworkUrl(key), "width": width, "height": height,
+                         "title": relData.title});
         }
     }
     templateData.related = related;

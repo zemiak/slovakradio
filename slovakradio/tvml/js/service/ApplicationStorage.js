@@ -2,10 +2,10 @@ var ApplicationStorage = {
     get: function(key, defaultValue) {
         var value = localStorage.getItem("com.zemiak.slovakradio." + key);
 
-        return null === value ? defaultValue : value;
+        return null === value ? defaultValue : JSON.parse(value);
     },
 
     set: function(key, value) {
-        localStorage.setItem("com.zemiak.slovakradio." + key, value);
+        localStorage.setItem("com.zemiak.slovakradio." + key, JSON.stringify(value));
     }
 };

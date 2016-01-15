@@ -14,6 +14,7 @@ App.onLaunch = function(options) {
         resourceLoaderLocal.scriptUrl("service/RadioRepository.js"),
         resourceLoaderLocal.scriptUrl("service/ApplicationStorage.js"),
         resourceLoaderLocal.scriptUrl("service/RadioPlayer.js"),
+        resourceLoaderLocal.scriptUrl("service/Favorites.js"),
         resourceLoaderLocal.scriptUrl("service/playlist/RadioPlaylist.js"),
         resourceLoaderLocal.scriptUrl("service/playlist/RadioPlaylistParser.js"),
         resourceLoaderLocal.scriptUrl("service/playlist/RtvsPlaylistParser.js"),
