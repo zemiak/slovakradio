@@ -1,4 +1,4 @@
-# :RADIO RTVS
+# :RADIA SK
 
 A totally unofficial Slovakia Radios radio player for AppleTV 4.
 
