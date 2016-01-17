@@ -15,6 +15,7 @@ App.onLaunch = function(options) {
         resourceLoaderLocal.scriptUrl("service/ApplicationStorage.js"),
         resourceLoaderLocal.scriptUrl("service/RadioPlayer.js"),
         resourceLoaderLocal.scriptUrl("service/Favorites.js"),
+        resourceLoaderLocal.scriptUrl("service/DataUpdater.js"),
         resourceLoaderLocal.scriptUrl("service/playlist/RadioPlaylist.js"),
         resourceLoaderLocal.scriptUrl("service/playlist/RadioPlaylistParser.js"),
         resourceLoaderLocal.scriptUrl("service/playlist/RtvsPlaylistParser.js"),
@@ -24,6 +25,7 @@ App.onLaunch = function(options) {
 
     evaluateScripts(javascriptFiles, function(success) {
         if(success) {
+            DataUpdater.check();
             Presenter.options = options;
             Presenter.loader = resourceLoaderLocal;
             Presenter.navigate("Main");

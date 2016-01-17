@@ -40,5 +40,27 @@ var Favorites = {
         var current = Presenter.getCurrentDocument();
         var replacement = Presenter.getDocumentFromTemplate("Detail");
         Presenter.replaceDocument(replacement, current);
+    },
+
+    cleanup: function() {
+        var favs = Favorites.get();
+        var newFavs = [];
+        var modified = false;
+
+        var radios = []
+        for (var i in RadioData.radios) {
+            radios.push(RadioData.radios[i]);
+        }
+
+        for (var i in favs) {
+            var fav = favs[i];
+            if (radios.indexOf(fav) > -1) {
+                newFavs.push(fav);
+            } else {
+                modified = true;
+            }
+        }
+
+        Favorites.set(newFavs);
     }
 };

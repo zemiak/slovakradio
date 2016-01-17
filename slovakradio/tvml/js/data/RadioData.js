@@ -2,8 +2,6 @@ var RadioData = {
     "version": {
         "version": "2016-01-12 20:00",
         "motd": "Artwork enabled",
-        "hasSeenMotd": true,
-        "runScriptAfterUpgrade": null,
         "lastCheckedDay": 12
     },
 
