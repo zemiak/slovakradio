@@ -1,5 +1,5 @@
 var DataUpdater = {
-    URL: "http://pages.github.io/zemiak/slovakradio/update/v1/data.js",
+    URL: "http://zemiak.github.io/slovakradio/update/v1/data.js",
 
     check: function() {
         if (localStorage.radioData) {
@@ -37,6 +37,8 @@ var DataUpdater = {
             return;
         }
 
+        var currentDayOfMonth = new Date().getDate();
+        data.version.lastCheckedDay = currentDayOfMonth;
         RadioData = data;
         RadioData.save();
         Favorites.cleanup();
