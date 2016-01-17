@@ -1,8 +1,8 @@
 # :RADIO RTVS
 
-A totally unofficial RTVS (Radio and Television Slovakia) radio player for AppleTV 4.
+A totally unofficial Slovakia Radios radio player for AppleTV 4.
 
-Artwork has been taken from a SITA (Slovak Press Agency) and RTVS site.
+Artwork has been taken from a SITA (Slovak Press Agency), RTVS and respective radio sites.
 
 License: BSD
 
