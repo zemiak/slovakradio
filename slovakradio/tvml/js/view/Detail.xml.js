@@ -1,9 +1,6 @@
 /* global RadioRepository, resourceLoaderLocal, Mustache */
 
 var Template = function() {
-    var width = 293;
-    var height = 161;
-
     var radioName = RadioPlayer.getRadioName();
     var data = RadioRepository.getRadioData(radioName);
     var template = resourceLoaderLocal.loadBundleResource("templates/Detail.mustache");
@@ -29,7 +26,7 @@ var Template = function() {
             }
 
             var relData = RadioRepository.getRadioData(key);
-            related.push({"key": key, "artwork": RadioRepository.getArtworkUrl(key), "width": width, "height": height,
+            related.push({"key": key, "artwork": RadioRepository.getArtworkUrl(key), "width": Presenter.width, "height": Presenter.height,
                          "title": relData.title});
         }
     }

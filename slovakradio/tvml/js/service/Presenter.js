@@ -1,6 +1,9 @@
 /* global navigationDocument, resourceLoaderLocal, Template */
 
 var Presenter = {
+    width: 293,
+    height: 161,
+
     makeDocument: function(resource) {
         if (!Presenter.parser) {
             Presenter.parser = new DOMParser();
@@ -17,8 +20,8 @@ var Presenter = {
         navigationDocument.pushDocument(xml);
     },
 
-    replaceDocument: function(xml) {
-        navigationDocument.replaceDocument(xml, Presenter.getCurrentDocument());
+    replaceDocument: function(xml, doc) {
+        navigationDocument.replaceDocument(xml, doc);
     },
 
     load: function(event) {
@@ -47,7 +50,7 @@ var Presenter = {
 
     navigateReplace: function(template) {
         var doc = Presenter.getDocumentFromTemplate(template);
-        Presenter.replaceDocument(doc);
+        Presenter.replaceDocument(doc, Presenter.getCurrentDocument());
     },
 
     getDocumentName: function() {
@@ -67,6 +70,20 @@ var Presenter = {
     getRadioNameFromPage: function() {
         if ("Detail" === Presenter.getDocumentName()) {
             return Presenter.getDocumentDataElement().getAttribute("data-radioName");
+        }
+
+        return null;
+    },
+
+    getMainDocument: function() {
+        for (var i in navigationDocument.documents) {
+            var doc = navigationDocument.documents[i];
+            var ele = doc.getElementById("template-data");
+            var name = ele.getAttribute("data-template");
+
+            if ("Main" == name) {
+                return doc;
+            }
         }
 
         return null;

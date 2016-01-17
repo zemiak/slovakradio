@@ -9,10 +9,10 @@
                 {{#collections}}
                     <listItemLockup>
                         <title>{{title}}</title>
-                        <decorationLabel>{{itemsLength}}</decorationLabel>
+                        <decorationLabel id="collection-count-{{key}}">{{itemsLength}}</decorationLabel>
                         <relatedContent>
                             <grid>
-                                <section>
+                                <section id="collection-{{key}}">
                                     {{#items}}
                                         <lockup action="{{action}}">
                                             <img src="{{artwork}}" width="{{width}}" height="{{height}}" />

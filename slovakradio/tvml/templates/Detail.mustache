@@ -26,16 +26,16 @@
                 </buttonLockup>
 
                 {{#isFavorite}}
-                    <buttonLockup action="Favorites.toggle('{{key}}')">
-                        <badge src="resource://button-remove"/>
-                        <title>Neobľúbené</title>
+                    <buttonLockup id="favorite" action="Favorites.toggle('{{key}}')">
+                        <badge id="favorite-badge" src="resource://button-remove"/>
+                        <title id="favorite-title">Neobľúbené</title>
                     </buttonLockup>
                 {{/isFavorite}}
 
                 {{^isFavorite}}
-                    <buttonLockup action="Favorites.toggle('{{key}}')">
-                        <badge src="resource://button-add"/>
-                        <title>Obľúbené</title>
+                    <buttonLockup id="favorite" action="Favorites.toggle('{{key}}')">
+                        <badge id="favorite-badge" src="resource://button-add"/>
+                        <title id="favorite-title">Obľúbené</title>
                     </buttonLockup>
                 {{/isFavorite}}
             </row>
