@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>:RADIO RTVS</title>
+    <title>:RADIA SK</title>
   </head>
 
   <body>
@@ -18,8 +18,8 @@
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/zemiak/slovakradio">View on GitHub</a>
 
-          <h1 id="project_title">:RADIO RTVS</h1>
-          <h2 id="project_tagline">tvOS application for listening to Slovak RTVS radio stations</h2>
+          <h1 id="project_title">:RADIA SK</h1>
+          <h2 id="project_tagline">A totally unofficial Slovakia Radios radio player for AppleTV 4.</h2>
 
             <section id="downloads">
               <a class="zip_download_link" href="https://github.com/zemiak/slovakradio/zipball/master">Download this project as a .zip file</a>
@@ -36,38 +36,20 @@
 
 <p>A totally unofficial RTVS (Radio and Television Slovakia) radio player for AppleTV 4.</p>
 
-<p>Artwork has been taken from a SITA (Slovak Press Agency) and RTVS site.</p>
+<p>Artwork has been taken from a SITA (Slovak Press Agency), RTVS and respective radio sites.</p>
 
 <p>License: BSD</p>
 
 <h2>
+<a id="projectType" class="anchor" href="#projectType" aria-hidden="true"><span class="octicon octicon-link"></span></a>Project Type</h2>
+
+<p>This project uses TVML/TVJS for presentation and small Swift helpers to load resources locally from bundle and logging. Traditionally, you need a web server to server the TVML/TVJS/images. This project, thanks to <a href="https://github.com/sammyd/StandaloneTVML">https://github.com/sammyd/StandaloneTVML</a>, uses local file links and local resource loading via a small Swift helper class.</p>
+
+<h2>
 <a id="running" class="anchor" href="#running" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running</h2>
 
-<p>Until this gets released in the App Store, it is a little bit complicated.</p>
+<p>Until this gets released in the App Store, it is a little bit complicated. You have to build the project and deploy it to the AppleTV via a USB-C cable. See <a href="http://9to5mac.com/2015/06/10/xcode-7-allows-anyone-to-download-build-and-sideload-ios-apps-for-free/">http://9to5mac.com/2015/06/10/xcode-7-allows-anyone-to-download-build-and-sideload-ios-apps-for-free/</a> and <a href="http://bouk.co/blog/sideload-iphone/">http://bouk.co/blog/sideload-iphone/</a></p>
 
-<p>First, you have to use a web server accessible from your AppleTV (can be in your local net, can be outside) to host all the TVML, JS and images.</p>
-
-<p>Second, you have to build the project and deploy it to the AppleTV.</p>
-
-<h3>
-<a id="serving-static-content" class="anchor" href="#serving-static-content" aria-hidden="true"><span class="octicon octicon-link"></span></a>Serving static content</h3>
-
-<h4>
-<a id="developing" class="anchor" href="#developing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Developing</h4>
-
-<p>Run the "python -m SimpleHTTPServer 9001" command in the "client" subfolder.</p>
-
-<h4>
-<a id="running-installed-on-your-appletv" class="anchor" href="#running-installed-on-your-appletv" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running installed on your AppleTV</h4>
-
-<p>Fork this project on github, create Github Page for your project and serve the "client" subfolder from there, as you can see in the AppDelegate.swift here.</p>
-
-<h3>
-<a id="deploying-to-your-appletv" class="anchor" href="#deploying-to-your-appletv" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deploying to your AppleTV</h3>
-
-<p>See <a href="http://9to5mac.com/2015/06/10/xcode-7-allows-anyone-to-download-build-and-sideload-ios-apps-for-free/">http://9to5mac.com/2015/06/10/xcode-7-allows-anyone-to-download-build-and-sideload-ios-apps-for-free/</a> and <a href="http://bouk.co/blog/sideload-iphone/">http://bouk.co/blog/sideload-iphone/</a></p>
-
-<p>You will need an USB-C cable for that.</p>
       </section>
     </div>
 
