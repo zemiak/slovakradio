@@ -1,6 +1,6 @@
 var RadioData = {
     "version": {
-        "version": "2016-01-12 20:00",
+        "version": "2016-01-17 12:50",
         "motd": "Artwork enabled",
         "lastCheckedDay": 12
     },

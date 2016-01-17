@@ -4,7 +4,10 @@ var DataUpdater = {
     check: function() {
         if (localStorage.radioData) {
             RadioData = JSON.parse(localStorage.radioData);
+            LOG.log("RadioData loaded from localStorage");
         }
+
+        LOG.log("lastCheckedDay " + RadioData.version.lastCheckedDay + " version " + RadioData.version.version);
 
         var currentDayOfMonth = new Date().getDate();
         if (RadioData.version.lastCheckedDay === currentDayOfMonth) {
@@ -37,10 +40,12 @@ var DataUpdater = {
             return;
         }
 
+        LOG.log("Upgrading data to version " + newVersion);
+
         var currentDayOfMonth = new Date().getDate();
         data.version.lastCheckedDay = currentDayOfMonth;
         RadioData = data;
-        RadioData.save();
+        DataUpdater.save();
         Favorites.cleanup();
 
         if (data.version.motd) {
@@ -53,7 +58,6 @@ var DataUpdater = {
     },
 
     showMessage: function() {
-        var doc = createAlert("Your Radio Data have been updated", RadioData.version.motd);
-        navigationDocument.presentModal(doc);
+        Presenter.navigate("Updated");
     }
 };
