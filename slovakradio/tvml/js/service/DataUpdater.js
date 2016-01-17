@@ -1,5 +1,5 @@
 var DataUpdater = {
-    URL: "http://zemiak.github.io/slovakradio/update/v1/data.js",
+    URL: "http://zemiak.github.io/slovakradio/update/v1/data.json",
 
     check: function() {
         if (localStorage.radioData) {
