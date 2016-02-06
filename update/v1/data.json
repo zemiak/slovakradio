@@ -1,8 +1,8 @@
 {
     "version": {
-        "version": "2016-01-17 12:25",
-        "motd": "Update test 2016-01-17\nHello world!",
-        "lastCheckedDay": 12
+        "version": "2016-02-06 09:15",
+        "motd": "Pridané Rádio Pyramída (RTVS)",
+        "lastCheckedDay": 0
     },
 
     "collections": {
@@ -16,7 +16,7 @@
             "title": "RTVS",
             "description": "Rádiá RTVS",
             "items": ["fm", "slovensko", "junior", "devin", "klasika", "regina-ba",
-		      "regina-bb", "regina-ke", "litera", "rsi", "patria"]
+		      "regina-bb", "regina-ke", "litera", "rsi", "patria", "pyramida"]
         },
 
         "fun": {
@@ -41,7 +41,7 @@
         "classic": ["devin", "klasika"],
         "news": ["slovensko", "regina-ba", "regina-bb", "regina-ke"],
         "children": ["junior", "fun-children"],
-        "slow": ["jemne", "fun-love"]
+        "slow": ["jemne", "fun-love", "pyramida"]
     },
 
     "radios": {
@@ -313,6 +313,16 @@
             "title": "Rádio Slovensko International",
             "description": "We are RSI - Radio Slovakia International. We have been broadcasting since 1993, bringing you the juiciest info about our country in the heart of Europe. We broadcast half hour shows 7 days a week, in English, French, German, Russian, Spanish and Slovak, via the internet and satellite.",
             "artwork": "rsi.png"
+        },
+
+        "pyramida": {
+            "relation": "slow",
+            "collection": "rtvs",
+            "stream": "http://live.slovakradio.sk:8000/Pyramida_256.mp3",
+            "playlist": null,
+            "title": "Rádio Pyramída",
+            "artwork": "http://www.rtvs.sk/media/images/radiostations/radio_pyramida.png",
+            "description": "To najlepšie, čo v priebehu uplynulých desaťročí vytvoril Slovenský rozhlas, ktorý si pripomína 90. výročie."
         }
     }
 }
