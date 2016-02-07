@@ -47,16 +47,12 @@ var Favorites = {
         var newFavs = [];
         var modified = false;
 
-        var radios = []
-        for (var i in RadioData.radios) {
-            radios.push(RadioData.radios[i]);
-        }
-
         for (var i in favs) {
             var fav = favs[i];
-            if (radios.indexOf(fav) > -1) {
+            if (undefined !== RadioRepository.getRadioData(fav)) {
                 newFavs.push(fav);
             } else {
+                LOG.log("Removing favorite " + fav);
                 modified = true;
             }
         }

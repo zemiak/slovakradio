@@ -67,5 +67,9 @@ var RadioRepository = {
         }
 
         return data.artwork;
+    },
+
+    getVersion: function() {
+        return RadioData.version;
     }
 };

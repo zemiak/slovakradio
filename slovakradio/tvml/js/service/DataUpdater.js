@@ -2,10 +2,7 @@ var DataUpdater = {
     URL: "http://zemiak.github.io/slovakradio/update/v1/data.json",
 
     check: function() {
-        if (localStorage.radioData) {
-            RadioData = JSON.parse(localStorage.radioData);
-            LOG.log("RadioData loaded from localStorage");
-        }
+        RadioData = ApplicationStorage.get("RadioData", RadioData);
 
         LOG.log("lastCheckedDay " + RadioData.version.lastCheckedDay + " version " + RadioData.version.version);
 
@@ -40,7 +37,7 @@ var DataUpdater = {
             return;
         }
 
-        LOG.log("Upgrading data to version " + newVersion);
+        LOG.log("Upgrading data to version " + newVersion + " from version " + ourVersion);
 
         var currentDayOfMonth = new Date().getDate();
         data.version.lastCheckedDay = currentDayOfMonth;
@@ -49,15 +46,19 @@ var DataUpdater = {
         Favorites.cleanup();
 
         if (data.version.motd) {
+            LOG.log("Update message: " + RadioData.version.motd);
             DataUpdater.showMessage();
         }
     },
 
     save: function() {
-        localStorage.radioData = JSON.stringify(RadioData);
+        ApplicationStorage.set("RadioData", RadioData);
     },
 
     showMessage: function() {
-        Presenter.navigate("Updated");
+//        var errorDoc = createAlert("Dáta o rádiách aktualizované", RadioData.version.version + ": " + RadioData.version.motd);
+//        navigationDocument.presentModal(errorDoc);
+
+        Presenter.navigateReplace("Main");
     }
 };
